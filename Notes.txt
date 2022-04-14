@@ -9,14 +9,94 @@ Requirements:
 
 Salam
 
-test
-test
-test
-test
-test
-test
-test
+
+Customers:
+int ID 
+string Name 
+string Surname 
+string Address 
+string PhoneNumber 
+string Email 
+string Country 
+string City 
+string ZipCode 
+string PassportNo 
+bool Gender 
+CustomerStatus Status
 
 
-test1
-test2
+Departments:
+int Id 
+string Name 
+string Description
+DepartmentStatus Status 
+string Notes
+
+
+Employees:
+ int ID 
+ string Name 
+ string Surname 
+ string PhoneNumber 
+ string Address 
+ DateTime BirthDate 
+ bool Gender 
+ Department Department
+ DateTime JoiningDate 
+ decimal Salary 
+ TimeSpan BeginWorkTim
+ TimeSpan EndWorkTime 
+ EmployeeStatus Status
+
+
+Reservations:
+ int Id 
+ Customer CustomerID 
+ Room RoomID 
+ DateTime ReservationDat
+ DateTime CheckInDate
+ DateTime CheckOutDate 
+ int Adults 
+ int Children 
+ decimal Amount 
+ Enum Status
+ Enum isBreakfastIncluded
+ 
+
+Rooms:
+ int ID 
+ int RoomNumber 
+ byte FloorNo
+ RoomType RoomTypeID 
+ Enum Status
+ decimal PricePerNight 
+ Rate RateID 
+ bool Petfriendly 
+ bool IsSmoking 
+ string Notes 
+
+
+RoomType:
+int Id 
+string Name 
+byte MaxAdults  
+byte MaxChildren 
+decimal PricePerNight 
+string Description 
+
+
+Services:
+ int Id 
+ string Name 
+ string Description
+ Department DepartmentID
+ Enum Status  
+ decimal price 
+ string Notes 
+
+
+User:
+ int Id 
+ string Username 
+ string Password 
+ Enum Status 
