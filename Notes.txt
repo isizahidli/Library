@@ -7,17 +7,4 @@ Requirements:
 2) Register pəncərəsi (Qeydiyyat e-mail confirmation ilə təsdiqlənsin)
 
 
-
-
-Tables:
---kitablar
---müəlliflər
---işçilər
---Filiallar
---Müştərilər
---Satışlar (Kirayələr)
---istifadəçi və istifadəçi icazələri
-
-
---janrlar
---kateqoriyalar
+Salam
