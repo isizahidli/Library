@@ -8,6 +8,7 @@ using System.Windows.Controls;
 
 namespace Library.Commands
 {
+
     public class LoginCommand : BaseCommand
     {
         private readonly LoginViewModel loginVm;
