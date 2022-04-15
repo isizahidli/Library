@@ -13,6 +13,7 @@ namespace LibraryCore.Domain.Abstract
         IUserRepository UserRepository { get; }
         IBookRepository BookRepository { get; }
         IBranchRepository BranchRepository { get; }
+        IRoomTypeRepository RoomTypeRepository { get; }
 
     }
 }
