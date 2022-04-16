@@ -58,8 +58,14 @@
     <Compile Include="Domain\Entities\BaseEntity.cs" />
     <Compile Include="Domain\Entities\Book.cs" />
     <Compile Include="Domain\Entities\Branch.cs" />
+    <Compile Include="Domain\Entities\Customer.cs" />
+    <Compile Include="Domain\Entities\Department.cs" />
+    <Compile Include="Domain\Entities\Employee.cs" />
     <Compile Include="Domain\Entities\IEntity.cs" />
+    <Compile Include="Domain\Entities\Reservation.cs" />
+    <Compile Include="Domain\Entities\Room.cs" />
     <Compile Include="Domain\Entities\RoomType.cs" />
+    <Compile Include="Domain\Entities\Service.cs" />
     <Compile Include="Domain\Entities\User.cs" />
     <Compile Include="Domain\Entities\Writer.cs" />
     <Compile Include="Enums\SqlServerType.cs" />
