@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryCore.Domain.Entities
 {
-    public class Book : BaseEntity
+    public class Book1 
     { 
     }
 }

@@ -10,7 +10,7 @@ namespace Library.Mappers
 {
     public class BranchMapper
     {
-        public static BranchModel Map(Branch branch)
+        public static BranchModel Map(Branch1 branch)
         {
             var model = new BranchModel();
             model.Id = branch.Id;
@@ -22,7 +22,7 @@ namespace Library.Mappers
             return model;
         }
 
-        public static Branch Map(BranchModel model, Branch destination)
+        public static Branch1 Map(BranchModel model, Branch1 destination)
         {
             destination.Id = model.Id;
             destination.Name = model.Name;

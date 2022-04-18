@@ -7,13 +7,13 @@ using System;
 
 namespace LibraryCore.DataAccess.SqlServer
 {
-    public class SqlBranchRepository : SqlBaseRepository,  IBranchRepository
+    public class SqlBranchRepository : SqlBaseRepository,  IBranchRepository1
     {
         public SqlBranchRepository(SqlContext context) : base(context)
         {
         }
 
-        public int Add(Branch branch)
+        public int Add(Branch1 branch)
         {
             using(SqlConnection conn = new SqlConnection(context.ConnString))
             {
@@ -48,7 +48,7 @@ namespace LibraryCore.DataAccess.SqlServer
             }
         }
 
-        public Branch FindById(int id)
+        public Branch1 FindById(int id)
         {
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
@@ -59,7 +59,7 @@ namespace LibraryCore.DataAccess.SqlServer
                     cmd.Parameters.AddWithValue("@Id", id);
                     var reader = cmd.ExecuteReader();
 
-                    Branch branch = null;
+                    Branch1 branch = null;
 
                     if (reader.Read())
                     {
@@ -71,7 +71,7 @@ namespace LibraryCore.DataAccess.SqlServer
             }
         }
 
-        public List<Branch> Get()
+        public List<Branch1> Get()
         {
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
@@ -81,11 +81,11 @@ namespace LibraryCore.DataAccess.SqlServer
                 {
                     var reader = cmd.ExecuteReader();
 
-                    List<Branch> branches = new List<Branch>();
+                    List<Branch1> branches = new List<Branch1>();
 
                     while(reader.Read())
                     {
-                        Branch branch = GetDataFromReader(reader);
+                        Branch1 branch = GetDataFromReader(reader);
                         branches.Add(branch);
                     }
 
@@ -94,7 +94,7 @@ namespace LibraryCore.DataAccess.SqlServer
             }
         }
 
-        public bool Update(Branch branch)
+        public bool Update(Branch1 branch)
         {
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
@@ -121,9 +121,9 @@ namespace LibraryCore.DataAccess.SqlServer
             }
         }
 
-        private Branch GetDataFromReader(SqlDataReader reader)
+        private Branch1 GetDataFromReader(SqlDataReader reader)
         {
-            Branch branch = new Branch();
+            Branch1 branch = new Branch1();
             branch.Id = reader.GetInt32("Id");
             branch.Name = reader.GetString("Name");
             branch.Address = reader.GetString("Address");

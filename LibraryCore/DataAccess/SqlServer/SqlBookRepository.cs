@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace LibraryCore.DataAccess.SqlServer
 {
-    public class SqlBookRepository : SqlBaseRepository ,  IBookRepository
+    public class SqlBookRepository : SqlBaseRepository ,  IBookRepository1
     {
         public SqlBookRepository(SqlContext context) : base(context)
         {
         }
 
-        public int Add(Book obj)
+        public int Add(Book1 obj)
         {
             throw new System.NotImplementedException();
         }
@@ -20,17 +20,17 @@ namespace LibraryCore.DataAccess.SqlServer
             throw new System.NotImplementedException();
         }
 
-        public Book FindById(int id)
+        public Book1 FindById(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public List<Book> Get()
+        public List<Book1> Get()
         {
             throw new System.NotImplementedException();
         }
 
-        public bool Update(Book obj)
+        public bool Update(Book1 obj)
         {
             throw new System.NotImplementedException();
         }

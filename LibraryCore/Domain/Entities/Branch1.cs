@@ -1,6 +1,6 @@
 ﻿namespace LibraryCore.Domain.Entities
 {
-    public class Branch : BaseEntity
+    public class Branch1 
     {
         public string Name { get; set; }
         public string Address { get; set; }

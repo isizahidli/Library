@@ -41,7 +41,7 @@ namespace Library.Commands.BranchCommands
                 BusinessUtil.DoAnimation(viewModel.MessageDialog);
 
                 // reload all branches
-                List<Branch> branches = DB.BranchRepository.Get();
+                List<Branch1> branches = DB.BranchRepository.Get();
                 List<BranchModel> models = new List<BranchModel>();
                 foreach (var entity in branches)
                 {

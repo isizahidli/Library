@@ -3,7 +3,7 @@ using System;
 
 namespace LibraryCore.Domain.Abstract
 {
-    public interface IBookRepository : IRepository<Book>
+    public interface IBookRepository1 : IRepository<Book1>
     {
     }
 }

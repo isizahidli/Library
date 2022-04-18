@@ -25,7 +25,7 @@ namespace Library.Commands.MainPageCommands
             BranchViewModel branchViewModel = new BranchViewModel();
             branchViewModel.MessageDialog = branchControl.MessageDialog;
 
-            List<Branch> branches = DB.BranchRepository.Get();
+            List<Branch1> branches = DB.BranchRepository.Get();
             List<BranchModel> models = new List<BranchModel>();
             foreach(var branch in branches)
             {

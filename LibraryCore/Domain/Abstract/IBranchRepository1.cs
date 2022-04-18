@@ -2,7 +2,7 @@
 
 namespace LibraryCore.Domain.Abstract
 {
-    public interface IBranchRepository : IRepository<Branch>
+    public interface IBranchRepository1 : IRepository<Branch1>
     {
     }
 }

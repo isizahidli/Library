@@ -11,8 +11,8 @@ namespace LibraryCore.Domain.Abstract
         bool CheckServer();
 
         IUserRepository UserRepository { get; }
-        IBookRepository BookRepository { get; }
-        IBranchRepository BranchRepository { get; }
+        IBookRepository1 BookRepository { get; }
+        IBranchRepository1 BranchRepository { get; }
         IRoomTypeRepository RoomTypeRepository { get; }
 
     }

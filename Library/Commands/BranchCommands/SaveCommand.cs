@@ -40,7 +40,7 @@ namespace Library.Commands.BranchCommands
 
                     if (situation == (int)Constants.SITUATIONS.ADD)
                     {
-                        var branch = BranchMapper.Map(viewModel.CurrentBranch, new Branch());
+                        var branch = BranchMapper.Map(viewModel.CurrentBranch, new Branch1());
                         branch.IsDeleted = false;
                         branch.CreationDate = DateTime.Now;
                         branch.Creator = Kernel.AuthenticatedUser;
@@ -64,7 +64,7 @@ namespace Library.Commands.BranchCommands
                     BusinessUtil.DoAnimation(viewModel.MessageDialog);
 
                     // reload all branches
-                    List<Branch> branches = DB.BranchRepository.Get();
+                    List<Branch1> branches = DB.BranchRepository.Get();
                     List<BranchModel> models = new List<BranchModel>();
                     foreach (var entity in branches)
                     {
