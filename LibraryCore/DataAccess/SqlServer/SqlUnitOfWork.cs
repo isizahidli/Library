@@ -16,9 +16,13 @@ namespace LibraryCore.DataAccess
         }
 
         public IUserRepository UserRepository => new SqlUserRepository(context);
-        public IBookRepository1 BookRepository => new SqlBookRepository(context);
-        public IBranchRepository1 BranchRepository => new SqlBranchRepository(context);
+        public IRoomRepository RoomRepository => new SqlRoomRepository(context);
         public IRoomTypeRepository RoomTypeRepository => new SqlRoomTypeRepository(context);
+        public IReservationRepository ReservationRepository => new SqlReservationRepository(context);
+        public IDepartmentRepository DepartmentRepository =>  new SqlDepartmentRepository(context);
+        public IServiceRepository ServiceRepository =>  new SqlServiceRepository(context);
+        public IEmployeeRepository EmployeeRepository =>  new SqlEmployeeRepository(context);
+        public ICustomerRepository CustomerRepository =>  new SqlCustomerRepository(context);
 
         public bool CheckServer()
         {

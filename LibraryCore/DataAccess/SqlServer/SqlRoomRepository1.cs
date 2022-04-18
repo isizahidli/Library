@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace LibraryCore.DataAccess.SqlServer
 {
-    public class SqlBookRepository : SqlBaseRepository ,  IBookRepository1
+    public class SqlBookRepository : SqlBaseRepository ,  IBookRepository
     {
         public SqlBookRepository(SqlContext context) : base(context)
         {

@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace LibraryCore.DataAccess.SqlServer
 {
-    public class SqlUserRepository: SqlBaseRepository ,IUserRepository
+    public class SqlCustomerRepository: SqlBaseRepository, ICustomerRepository
     {
-        public SqlUserRepository(SqlContext context) : base(context)
+        public SqlCustomerRepository(SqlContext context) : base(context)
         {
         }
 
-        public int Add(User obj)
+        public int Add(Customer obj)
         {
             throw new NotImplementedException();
         }
@@ -24,22 +24,17 @@ namespace LibraryCore.DataAccess.SqlServer
             throw new NotImplementedException();
         }
 
-        public User FindById(int id)
+        public Customer FindById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public User FindByUsername(string username)
+        public List<Customer> Get()
         {
             throw new NotImplementedException();
         }
 
-        public List<User> Get()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Update(User obj)
+        public bool Update(Customer obj)
         {
             throw new NotImplementedException();
         }

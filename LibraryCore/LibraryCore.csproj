@@ -43,12 +43,20 @@
   <ItemGroup>
     <Compile Include="Configurations\ConfigObject.cs" />
     <Compile Include="DataAccess\SqlServer\SqlBaseRepository.cs" />
-    <Compile Include="DataAccess\SqlServer\SqlBookRepository.cs" />
-    <Compile Include="DataAccess\SqlServer\SqlBranchRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlCustomerRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlDepartmentRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlEmployeeRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlReservationRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlRoomRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlRoomRepository1.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlBranchRepository1.cs" />
     <Compile Include="DataAccess\SqlServer\SqlContext.cs" />
     <Compile Include="DataAccess\SqlServer\SqlRoomTypeRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlRoomTypeRepository1.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlServiceRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlUnitOfWork.cs" />
     <Compile Include="DataAccess\SqlServer\SqlUserRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlUserRepository1.cs" />
     <Compile Include="Domain\Abstract\IBookRepository1.cs" />
     <Compile Include="Domain\Abstract\IBranchRepository1.cs" />
     <Compile Include="Domain\Abstract\ICustomerRepository.cs" />

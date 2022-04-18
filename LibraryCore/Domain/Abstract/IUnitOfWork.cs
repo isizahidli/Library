@@ -11,9 +11,13 @@ namespace LibraryCore.Domain.Abstract
         bool CheckServer();
 
         IUserRepository UserRepository { get; }
-        IBookRepository1 BookRepository { get; }
-        IBranchRepository1 BranchRepository { get; }
+        IRoomRepository RoomRepository { get; }
+        IDepartmentRepository DepartmentRepository { get; }
         IRoomTypeRepository RoomTypeRepository { get; }
+        IServiceRepository ServiceRepository { get; }
+        IEmployeeRepository EmployeeRepository { get; }
+        ICustomerRepository CustomerRepository { get; }
+        IReservationRepository ReservationRepository { get; }
 
     }
 }

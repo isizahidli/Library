@@ -7,9 +7,9 @@ using System;
 
 namespace LibraryCore.DataAccess.SqlServer
 {
-    public class SqlBranchRepository : SqlBaseRepository,  IBranchRepository1
+    public class SqlBranchRepository1 : SqlBaseRepository,  IBranchRepository1
     {
-        public SqlBranchRepository(SqlContext context) : base(context)
+        public SqlBranchRepository1(SqlContext context) : base(context)
         {
         }
 
