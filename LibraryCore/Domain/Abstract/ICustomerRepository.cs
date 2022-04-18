@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryCore.Domain.Abstract
 {
-    interface ICustomerRepository: IRepository<Customer>
+    public interface ICustomerRepository: IRepository<Customer>
     {
     }
 }
