@@ -98,10 +98,16 @@
     <Compile Include="Commands\RoomTypeCommands\EnumerateCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\RoomTypeBaseCommand.cs" />
     <Compile Include="Mappers\BranchMapper.cs" />
+    <Compile Include="Mappers\CustomerMapper.cs" />
+    <Compile Include="Mappers\DepartmentMapper.cs" />
+    <Compile Include="Mappers\EmployeeMapper.cs" />
     <Compile Include="Mappers\RoomTypeMapper.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\BranchModel.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\DepartmentModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RoomTypeModel.cs" />
     <Compile Include="Utils\BusinessUtil.cs" />
