@@ -2,7 +2,7 @@
 
 namespace LibraryCore.Domain.Entities
 {
-    public class User : BaseEntity
+    public class User 
     {
         public int Id { get; set; }
         public string Username { get; set; }

@@ -12,6 +12,5 @@ namespace LibraryCore.Domain.Entities
         public string Name { get; set; }
         public string Description { get; set; }
        // public DepartmentStatus Status { get; set; }
-        public bool Gender { get; set; }
     }
 }

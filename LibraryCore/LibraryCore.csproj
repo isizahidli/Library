@@ -48,11 +48,9 @@
     <Compile Include="DataAccess\SqlServer\SqlEmployeeRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlReservationRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlRoomRepository.cs" />
-    <Compile Include="DataAccess\SqlServer\SqlRoomRepository1.cs" />
     <Compile Include="DataAccess\SqlServer\SqlBranchRepository1.cs" />
     <Compile Include="DataAccess\SqlServer\SqlContext.cs" />
     <Compile Include="DataAccess\SqlServer\SqlRoomTypeRepository.cs" />
-    <Compile Include="DataAccess\SqlServer\SqlRoomTypeRepository1.cs" />
     <Compile Include="DataAccess\SqlServer\SqlServiceRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlUnitOfWork.cs" />
     <Compile Include="DataAccess\SqlServer\SqlUserRepository.cs" />

@@ -15,11 +15,11 @@ namespace LibraryCore.Domain.Entities
         public string Address { get; set; }
         public DateTime BirthDate { get; set; }
         public bool Gender { get; set; }
-        public Department Department { get; set; }
+        //public Department Department { get; set; }
         public DateTime JoiningDate { get; set; }
         public decimal Salary { get; set; }
         public TimeSpan BeginWorkTime { get; set; }
         public TimeSpan EndWorkTime { get; set; }
-       
+        public Enum Status { get; set; }
     }
 }
