@@ -48,15 +48,11 @@
     <Compile Include="DataAccess\SqlServer\SqlEmployeeRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlReservationRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlRoomRepository.cs" />
-    <Compile Include="DataAccess\SqlServer\SqlBranchRepository1.cs" />
     <Compile Include="DataAccess\SqlServer\SqlContext.cs" />
     <Compile Include="DataAccess\SqlServer\SqlRoomTypeRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlServiceRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlUnitOfWork.cs" />
     <Compile Include="DataAccess\SqlServer\SqlUserRepository.cs" />
-    <Compile Include="DataAccess\SqlServer\SqlUserRepository1.cs" />
-    <Compile Include="Domain\Abstract\IBookRepository1.cs" />
-    <Compile Include="Domain\Abstract\IBranchRepository1.cs" />
     <Compile Include="Domain\Abstract\ICustomerRepository.cs" />
     <Compile Include="Domain\Abstract\IDepartmentRepository.cs" />
     <Compile Include="Domain\Abstract\IEmployeeRepository.cs" />
@@ -67,8 +63,6 @@
     <Compile Include="Domain\Abstract\IServiceRepository.cs" />
     <Compile Include="Domain\Abstract\IUnitOfWork.cs" />
     <Compile Include="Domain\Abstract\IUserRepository.cs" />
-    <Compile Include="Domain\Entities\Book1.cs" />
-    <Compile Include="Domain\Entities\Branch1.cs" />
     <Compile Include="Domain\Entities\Customer.cs" />
     <Compile Include="Domain\Entities\Department.cs" />
     <Compile Include="Domain\Entities\Employee.cs" />
@@ -77,7 +71,6 @@
     <Compile Include="Domain\Entities\RoomType.cs" />
     <Compile Include="Domain\Entities\Service.cs" />
     <Compile Include="Domain\Entities\User.cs" />
-    <None Include="Domain\Entities\Writer.1cs" />
     <Compile Include="Enums\SqlServerType.cs" />
     <Compile Include="Factories\Kernel.cs" />
     <Compile Include="Factories\UnitOfWorkFactory.cs" />
