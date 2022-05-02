@@ -5,18 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Commands.BranchCommands
+namespace Library.Commands.ServiceCommands
 {
-    public class ExportPdfCommand : BranchBaseCommand
+    public class RejectCommand : ServiceBaseCommand
     {
-        public ExportPdfCommand(BranchViewModel viewModel) : base(viewModel)
-        {
-
-        }
+        public RejectCommand(ServiceViewModel viewModel) : base(viewModel) { }
 
         public override void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            viewModel.InitializeViewModel();
         }
     }
 }

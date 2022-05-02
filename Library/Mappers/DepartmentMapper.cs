@@ -16,7 +16,6 @@ namespace Library.Mappers
             model.Id = department.Id;
             model.Name = department.Name;
             model.Description = department.Description;
-            model.Gender = department.Gender;
 
             return model;
         }
@@ -28,7 +27,6 @@ namespace Library.Mappers
             destination.Id = model.Id;
             destination.Name = model.Name;
             destination.Description = model.Description;
-            destination.Gender = model.Gender;
 
             return destination;
         }

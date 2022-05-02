@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryCore.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace LibraryCore.Domain.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         //public Department DepartmentId { get; set; }
-        public Enum Status { get; set; }
+        public Status Status { get; set; }
         public decimal Price { get; set; }
     }
 }

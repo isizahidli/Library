@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Commands.BranchCommands
+namespace Library.Commands.ServiceCommands
 {
-    public class EnumerateCommand : BranchBaseCommand
+    public class EnumerateCommand : ServiceBaseCommand
     {
-        public EnumerateCommand(BranchViewModel viewModel) : base(viewModel)
+        public EnumerateCommand(ServiceViewModel viewModel) : base(viewModel)
         {
 
         }
@@ -17,7 +17,7 @@ namespace Library.Commands.BranchCommands
         public override void Execute(object parameter)
         {
             int no = 1;
-            foreach(var item in viewModel.Branches)
+            foreach (var item in viewModel.Services)
             {
                 item.No = no;
                 no++;

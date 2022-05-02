@@ -1,5 +1,6 @@
 ﻿using LibraryCore.Domain.Abstract;
 using LibraryCore.Domain.Entities;
+using LibraryCore.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;

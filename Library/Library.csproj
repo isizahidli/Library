@@ -81,13 +81,6 @@
     </Compile>
     <Compile Include="Attributes\ExportAttribute.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
-    <Compile Include="Commands\BranchCommands\BranchBaseCommand.cs" />
-    <Compile Include="Commands\BranchCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\BranchCommands\EnumerateCommand.cs" />
-    <Compile Include="Commands\BranchCommands\ExportExcelCommand.cs" />
-    <Compile Include="Commands\BranchCommands\ExportPdfCommand.cs" />
-    <Compile Include="Commands\BranchCommands\RejectCommand.cs" />
-    <Compile Include="Commands\BranchCommands\SaveCommand.cs" />
     <Compile Include="Commands\ConfigurationCommands\CancelConfigurationCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\ConfigurationCommands\SaveSqlConfigurationCommand.cs" />
@@ -98,11 +91,17 @@
     <Compile Include="Commands\MainPageCommands\OpenRoomTypesCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\EnumerateCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\RoomTypeBaseCommand.cs" />
+    <Compile Include="Commands\ServiceCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\ServiceCommands\EnumerateCommand.cs" />
+    <Compile Include="Commands\ServiceCommands\RejectCommand.cs" />
+    <Compile Include="Commands\ServiceCommands\SaveCommand.cs" />
+    <Compile Include="Commands\ServiceCommands\ServiceBaseCommand.cs" />
     <Compile Include="Mappers\BranchMapper.cs" />
     <Compile Include="Mappers\CustomerMapper.cs" />
     <Compile Include="Mappers\DepartmentMapper.cs" />
     <Compile Include="Mappers\EmployeeMapper.cs" />
     <Compile Include="Mappers\RoomTypeMapper.cs" />
+    <Compile Include="Mappers\ServiceMapper.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\BranchModel.cs" />
@@ -111,6 +110,7 @@
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RoomTypeModel.cs" />
+    <Compile Include="Models\ServiceModel.cs" />
     <Compile Include="Utils\BusinessUtil.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\ExcelWriter.cs" />
@@ -118,6 +118,7 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DialogViewModel.cs" />
     <Compile Include="ViewModels\UserControls\RoomTypeViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\ServiceViewModel.cs" />
     <Compile Include="ViewModels\UserControls\UCViewModel.cs" />
     <Compile Include="ViewModels\UserControls\WriterViewModel.cs" />
     <Compile Include="ViewModels\Windows\AddSalaryViewModel.cs" />
@@ -146,6 +147,9 @@
     </Compile>
     <Compile Include="Views\UserControls\RoomTypeControl.xaml.cs">
       <DependentUpon>RoomTypeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ServiceControl.xaml.cs">
+      <DependentUpon>ServiceControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\AddSalaryWindow.xaml.cs">
       <DependentUpon>AddSalaryWindow.xaml</DependentUpon>
@@ -225,6 +229,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\RoomTypeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ServiceControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,7 +25,6 @@ namespace Library.Mappers
             model.Gender = employee.Gender;
             model.Salary = employee.Salary;
             model.JoiningDate = employee.JoiningDate;
-            model.Department = DepartmentMapper.Map(employee.Department);
 
             return model;
         }
@@ -45,7 +44,6 @@ namespace Library.Mappers
             destination.Gender = model.Gender;
             destination.Salary = model.Salary;
             destination.JoiningDate = model.JoiningDate;
-            destination.Department = DepartmentMapper.Map(model.Department);
 
             return destination;
         }

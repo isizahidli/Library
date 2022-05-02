@@ -11,14 +11,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Commands.BranchCommands
+namespace Library.Commands.ServiceCommands
 {
-    public class DeleteCommand : BranchBaseCommand
+    public class DeleteCommand : ServiceBaseCommand
     {
-        public DeleteCommand(BranchViewModel viewModel) : base(viewModel)
-        {
-
-        }
+        public DeleteCommand(ServiceViewModel viewModel) : base(viewModel) { }
 
         public override void Execute(object parameter)
         {
@@ -29,27 +26,22 @@ namespace Library.Commands.BranchCommands
             dialog.DataContext = dialogViewModel;
             if (dialog.ShowDialog() == true)
             {
-                int id = viewModel.SelectedBranch.Id;
-                var branch = DB.BranchRepository.FindById(id);
-                if(branch != null)
-                {
-                    branch.IsDeleted = true;
-                    DB.BranchRepository.Update(branch);
-                }
+                int id = viewModel.SelectedService.Id;
+                var branch = DB.ServiceRepository.Delete(id);
 
                 viewModel.Message = "Əməliyyat uğurla həyata keçdi";
                 BusinessUtil.DoAnimation(viewModel.MessageDialog);
 
                 // reload all branches
-                List<Branch1> branches = DB.BranchRepository.Get();
-                List<BranchModel> models = new List<BranchModel>();
-                foreach (var entity in branches)
+                List<Service> services = DB.ServiceRepository.Get();
+                List<ServiceModel> models = new List<ServiceModel>();
+                foreach (var entity in services)
                 {
-                    var model = BranchMapper.Map(entity);
+                    var model = ServiceMapper.Map(entity);
                     models.Add(model);
                 }
 
-                viewModel.Branches = new List<BranchModel>(models);
+                viewModel.Services = new List<ServiceModel>(models);
                 viewModel.InitializeViewModel();
 
                 Logger.LogInformation($"Branch: {id}  has been deleted");

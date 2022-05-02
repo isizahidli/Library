@@ -73,6 +73,7 @@
     <Compile Include="Domain\Entities\Service.cs" />
     <Compile Include="Domain\Entities\User.cs" />
     <Compile Include="Enums\SqlServerType.cs" />
+    <Compile Include="Enums\Status.cs" />
     <Compile Include="Factories\Kernel.cs" />
     <Compile Include="Factories\UnitOfWorkFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
