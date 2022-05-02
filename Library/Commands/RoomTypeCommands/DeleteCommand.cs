@@ -11,11 +11,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Commands.ServiceCommands
+namespace Library.Commands.RoomTypeCommands
 {
-    public class DeleteCommand : ServiceBaseCommand
+    public class DeleteCommand : RoomTypeBaseCommand
     {
-        public DeleteCommand(ServiceViewModel viewModel) : base(viewModel) { }
+        public DeleteCommand(RoomTypeViewModel viewModel) : base(viewModel) { }
 
         public override void Execute(object parameter)
         {
@@ -26,22 +26,22 @@ namespace Library.Commands.ServiceCommands
             dialog.DataContext = dialogViewModel;
             if (dialog.ShowDialog() == true)
             {
-                int id = viewModel.SelectedService.Id;
-                DB.ServiceRepository.Delete(id);
+                int id = viewModel.SelectedRoomType.Id;
+                DB.RoomTypeRepository.Delete(id);
 
                 viewModel.Message = "Əməliyyat uğurla həyata keçdi";
                 BusinessUtil.DoAnimation(viewModel.MessageDialog);
 
                 // reload all branches
-                List<Service> services = DB.ServiceRepository.Get();
-                List<ServiceModel> models = new List<ServiceModel>();
+                List<RoomType> services = DB.RoomTypeRepository.Get();
+                List<RoomTypeModel> models = new List<RoomTypeModel>();
                 foreach (var entity in services)
                 {
-                    var model = ServiceMapper.Map(entity);
+                    var model = RoomTypeMapper.Map(entity);
                     models.Add(model);
                 }
 
-                viewModel.Services = new List<ServiceModel>(models);
+                viewModel.RoomTypes = new List<RoomTypeModel>(models);
                 viewModel.InitializeViewModel();
 
                 Logger.LogInformation($"Branch: {id}  has been deleted");

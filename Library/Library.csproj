@@ -113,8 +113,12 @@
     <Compile Include="Commands\MainPageCommands\OpenAddSalaryCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenBookCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenRoomTypesCommand.cs" />
+    <Compile Include="Commands\MainPageCommands\OpenServicesCommand.cs" />
+    <Compile Include="Commands\RoomTypeCommands\DeleteCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\EnumerateCommand.cs" />
+    <Compile Include="Commands\RoomTypeCommands\RejectCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\RoomTypeBaseCommand.cs" />
+    <Compile Include="Commands\RoomTypeCommands\SaveCommand.cs" />
     <Compile Include="Commands\ServiceCommands\DeleteCommand.cs" />
     <Compile Include="Commands\ServiceCommands\EnumerateCommand.cs" />
     <Compile Include="Commands\ServiceCommands\RejectCommand.cs" />

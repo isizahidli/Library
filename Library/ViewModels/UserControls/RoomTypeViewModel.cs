@@ -106,12 +106,10 @@ namespace Library.ViewModels.UserControls
 
         #region Commands
 
-        //public SaveCommand Save => new SaveCommand(this);
-        //public RejectCommand Reject => new RejectCommand(this);
-        //public DeleteCommand Delete => new DeleteCommand(this);
+        public SaveCommand Save => new SaveCommand(this);
+        public RejectCommand Reject => new RejectCommand(this);
+        public DeleteCommand Delete => new DeleteCommand(this);
         public EnumerateCommand Enumerate => new EnumerateCommand(this);
-        //public ExportExcelCommand ExportExcel => new ExportExcelCommand(this);
-        //public ExportPdfCommand ExportPdf => new ExportPdfCommand(this);
 
         #endregion
     }
