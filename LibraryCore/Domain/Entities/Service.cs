@@ -11,7 +11,7 @@ namespace LibraryCore.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        //public Department DepartmentId { get; set; }
+        public Department Department { get; set; }
         public Enum Status { get; set; }
         public decimal Price { get; set; }
     }
