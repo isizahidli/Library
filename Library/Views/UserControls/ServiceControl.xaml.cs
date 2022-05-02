@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Library.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for BranchControl.xaml
+    /// Interaction logic for ServiceControl.xaml
     /// </summary>
-    public partial class BranchControl : UserControl
+    public partial class ServiceControl : UserControl
     {
-        public BranchControl()
+        public ServiceControl()
         {
             InitializeComponent();
         }
