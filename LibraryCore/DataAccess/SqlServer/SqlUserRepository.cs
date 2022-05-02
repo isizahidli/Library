@@ -129,5 +129,31 @@ namespace LibraryCore.DataAccess.SqlServer
                 }
             }
         }
+
+        public User FindByUsername(string username)
+        {
+            using (SqlConnection conn = new SqlConnection(context.ConnString))
+            {
+                conn.Open();
+                string query = "select * from Users where Username = @username";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    User user = null;
+                    if (reader.Read())
+                    {
+                        user = new User();
+                        user.Id = reader.GetInt32("Id");
+                        user.Username = reader.GetString("Username");
+                        user.PasswordHash = reader.GetString("PasswordHash");
+                       
+                        
+                    }
+                    return user;
+                }
+            }
+        }
     }
 }
