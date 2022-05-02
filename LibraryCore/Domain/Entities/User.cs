@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryCore.Enums;
+using System;
 
 namespace LibraryCore.Domain.Entities
 {
@@ -7,6 +8,6 @@ namespace LibraryCore.Domain.Entities
         public int Id { get; set; }
         public string Username { get; set; }
         public string PasswordHash { get; set; }
-        public Enum Status { get; set; }
+        public Status Status { get; set; }
     }
 }
