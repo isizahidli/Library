@@ -11,6 +11,6 @@ namespace LibraryCore.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-       // public DepartmentStatus Status { get; set; }
+        public Enum Status { get; set; }
     }
 }

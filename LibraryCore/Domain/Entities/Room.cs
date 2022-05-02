@@ -11,7 +11,7 @@ namespace LibraryCore.Domain.Entities
         public int Id { get; set; }
         public int RoomNumber { get; set; }
         public byte FloorNo { get; set; }
-        //public RoomType RoomTypeId { get; set; }
+        public RoomType RoomType { get; set; }
         public Enum Status { get; set; }
         public decimal PricePerNight { get; set; }
         public bool PetFriendly { get; set; }

@@ -19,6 +19,6 @@ namespace LibraryCore.Domain.Entities
         public string ZipCode { get; set; }
         public string PassportNo { get; set; }
         public bool Gender { get; set; }
-        //public CustomerStatus Status { get; set; }
+        public Enum Status { get; set; }
     }
 }

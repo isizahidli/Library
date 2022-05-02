@@ -92,7 +92,7 @@ namespace LibraryCore.DataAccess.SqlServer
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
                 conn.Open();
-                string query = "select * from Users where";
+                string query = "select * from Users where ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     var reader = cmd.ExecuteReader();
