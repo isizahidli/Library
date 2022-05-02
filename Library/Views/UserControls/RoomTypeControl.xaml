@@ -83,12 +83,7 @@
             </ListView>
 
             <Grid Grid.Row="2" Style="{StaticResource grdSearch}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2.5*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
                 <components:Search Grid.Column="0"/>
-                <components:Excel Grid.Column="1"/>
             </Grid>
 
         </Grid>

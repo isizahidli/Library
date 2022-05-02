@@ -91,7 +91,8 @@
                             <StackPanel>
                                 <Button Style="{StaticResource btnMenu}" Name="btnBooks"  Content="Kitablar"/>
                                 <Button Command="{Binding OpenBranch}" Style="{StaticResource btnMenu}" Name="btnBranches"  Content="Filiallar"/>
-                                <Button Command="{Binding OpenRoomType}" Style="{StaticResource btnMenu}" Name="btnRoomTypes"  Content="Room types"/>
+                                <Button Command="{Binding OpenRoomTypes}" Style="{StaticResource btnMenu}" Name="btnRoomTypes"  Content="Room types"/>
+                                <Button Command="{Binding OpenServices}" Style="{StaticResource btnMenu}" Name="btnServices"  Content="Services"/>
                                 <Button Style="{StaticResource btnMenu}" Name="btnWriters"  Content="Müəlliflər"/>
                                 <Button Style="{StaticResource btnMenu}" Name="btnSellers"  Content="Satıcılar"/>
                                 <Button Style="{StaticResource btnMenu}" Name="btnCustomers"  Content="Alıcılar"/>

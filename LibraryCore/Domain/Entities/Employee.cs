@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryCore.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,6 @@ namespace LibraryCore.Domain.Entities
         public decimal Salary { get; set; }
         public TimeSpan BeginWorkTime { get; set; }
         public TimeSpan EndWorkTime { get; set; }
-        public Enum Status { get; set; }
+        public Status Status { get; set; }
     }
 }
