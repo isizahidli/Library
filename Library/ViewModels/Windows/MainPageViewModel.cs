@@ -7,7 +7,6 @@ namespace Library.ViewModels
     public class MainPageViewModel : WindowViewModel
     {
 
-        public OpenBranchCommand OpenBranch => new OpenBranchCommand(this);
         public OpenRoomTypesCommand OpenRoomType => new OpenRoomTypesCommand(this);
         public OpenBookCommand OpenBook => new OpenBookCommand(this);
         public OpenAddSalaryCommand OpenAddSalary => new OpenAddSalaryCommand(this);

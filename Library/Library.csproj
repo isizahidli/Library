@@ -8,13 +8,28 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Library</RootNamespace>
     <AssemblyName>Library</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,6 +62,16 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=20.1460.0.51, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.20.1.0.51\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.WPF, Version=20.1460.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.WPF.20.1.0.51\lib\net46\Syncfusion.Shared.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.WPF, Version=20.1460.0.51, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.WPF.20.1.0.51\lib\net46\Syncfusion.Tools.WPF.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -87,7 +112,6 @@
     <Compile Include="Commands\MainPageCommands\MainPageBaseCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenAddSalaryCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenBookCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\OpenBranchCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenRoomTypesCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\EnumerateCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\RoomTypeBaseCommand.cs" />
@@ -96,7 +120,6 @@
     <Compile Include="Commands\ServiceCommands\RejectCommand.cs" />
     <Compile Include="Commands\ServiceCommands\SaveCommand.cs" />
     <Compile Include="Commands\ServiceCommands\ServiceBaseCommand.cs" />
-    <Compile Include="Mappers\BranchMapper.cs" />
     <Compile Include="Mappers\CustomerMapper.cs" />
     <Compile Include="Mappers\DepartmentMapper.cs" />
     <Compile Include="Mappers\EmployeeMapper.cs" />
@@ -125,7 +148,6 @@
     <Compile Include="ViewModels\Windows\LoginViewModel.cs" />
     <Compile Include="ViewModels\Windows\MainPageViewModel.cs" />
     <Compile Include="ViewModels\Windows\SqlConfigurationViewModel.cs" />
-    <Compile Include="ViewModels\UserControls\BranchViewModel.cs" />
     <Compile Include="ViewModels\Windows\WindowViewModel.cs" />
     <Compile Include="Views\Components\ControlHeader.xaml.cs">
       <DependentUpon>ControlHeader.xaml</DependentUpon>
@@ -162,9 +184,6 @@
     </Compile>
     <Compile Include="Views\Windows\SqlConfiguration.xaml.cs">
       <DependentUpon>SqlConfiguration.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UserControls\BranchControl.xaml.cs">
-      <DependentUpon>BranchControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\WriterControl.xaml.cs">
       <DependentUpon>WriterControl.xaml</DependentUpon>
@@ -252,10 +271,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\UserControls\BranchControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\UserControls\WriterControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -277,6 +292,18 @@
       <Project>{3e420262-620c-4ac2-91c3-b4330a3a0f37}</Project>
       <Name>LibraryCore</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
