@@ -11,11 +11,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Commands.RoomTypeCommands
+namespace Library.Commands.RoomCommands
 {
-    public class DeleteCommand : RoomTypeBaseCommand
+    public class DeleteCommand : RoomBaseCommand
     {
-        public DeleteCommand(RoomTypeViewModel viewModel) : base(viewModel) { }
+        public DeleteCommand(RoomViewModel viewModel) : base(viewModel) { }
 
         public override void Execute(object parameter)
         {
@@ -26,26 +26,27 @@ namespace Library.Commands.RoomTypeCommands
             dialog.DataContext = dialogViewModel;
             if (dialog.ShowDialog() == true)
             {
-                int id = viewModel.SelectedRoomType.Id;
+                int id = viewModel.SelectedRoom.Id;
                 DB.RoomTypeRepository.Delete(id);
 
                 viewModel.Message = "Əməliyyat uğurla həyata keçdi";
                 BusinessUtil.DoAnimation(viewModel.MessageDialog);
 
                 // reload all branches
-                List<RoomType> services = DB.RoomTypeRepository.Get();
-                List<RoomTypeModel> models = new List<RoomTypeModel>();
-                foreach (var entity in services)
+                List<Room> rooms = DB.RoomRepository.Get();
+                List<RoomModel> models = new List<RoomModel>();
+                foreach (var entity in rooms)
                 {
-                    var model = RoomTypeMapper.Map(entity);
+                    var model = RoomMapper.Map(entity);
                     models.Add(model);
                 }
 
-                viewModel.RoomTypes = new List<RoomTypeModel>(models);
+                viewModel.Rooms = new List<RoomModel>(models);
                 viewModel.InitializeViewModel();
 
-                Logger.LogInformation($"RoomType: {id} has been deleted");
+                Logger.LogInformation($"Room: {id}  has been deleted");
             }
+
         }
     }
 }

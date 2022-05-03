@@ -8,18 +8,21 @@ using System.Threading.Tasks;
 
 namespace Library.Mappers
 {
-    public static class RoomMapper
+    public class RoomMapper
     {
         public static RoomModel Map(Room room)
         {
             var model = new RoomModel();
+            
             model.Id = room.Id;
             model.RoomNumber = room.RoomNumber;
             model.FloorNo = room.FloorNo;
-            model.PricePerNight = room.PricePerNight;
-            model.PetFriendly = room.PetFriendly;
             model.IsSmoking = room.IsSmoking;
+            model.PetFriendly = room.PetFriendly;
+            model.PricePerNight = room.PricePerNight;
+            model.RoomNumber = room.RoomNumber;
             model.Status = room.Status;
+            model.RoomType = RoomTypeMapper.Map(room.RoomType);
 
             return model;
         }
@@ -34,8 +37,11 @@ namespace Library.Mappers
             destination.PricePerNight = model.PricePerNight;
             destination.PetFriendly = model.PetFriendly;
             destination.IsSmoking = model.IsSmoking;
+            destination.PetFriendly = model.PetFriendly;
+            destination.PricePerNight = model.PricePerNight;
+            destination.RoomNumber = model.RoomNumber;
             destination.Status = model.Status;
-           
+            destination.RoomType = RoomTypeMapper.Map(model.RoomType);
 
             return destination;
         }
