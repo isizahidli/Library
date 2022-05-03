@@ -112,6 +112,8 @@
     <Compile Include="Commands\MainPageCommands\MainPageBaseCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenAddSalaryCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenBookCommand.cs" />
+    <Compile Include="Commands\MainPageCommands\OpenReservationsCommand.cs" />
+    <Compile Include="Commands\MainPageCommands\OpenRoomsCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenRoomTypesCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenServicesCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\DeleteCommand.cs" />
@@ -127,6 +129,7 @@
     <Compile Include="Mappers\CustomerMapper.cs" />
     <Compile Include="Mappers\DepartmentMapper.cs" />
     <Compile Include="Mappers\EmployeeMapper.cs" />
+    <Compile Include="Mappers\RoomMapper.cs" />
     <Compile Include="Mappers\RoomTypeMapper.cs" />
     <Compile Include="Mappers\ServiceMapper.cs" />
     <Compile Include="Models\BaseModel.cs" />
@@ -136,6 +139,7 @@
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
     <Compile Include="Models\RoomTypeModel.cs" />
     <Compile Include="Models\ServiceModel.cs" />
     <Compile Include="Utils\BusinessUtil.cs" />
