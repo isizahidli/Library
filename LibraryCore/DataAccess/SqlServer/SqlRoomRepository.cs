@@ -55,7 +55,7 @@ namespace LibraryCore.DataAccess.SqlServer
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
                 conn.Open();
-                string query = "select * from Rooms where Id = @Id";
+                string query = "select r.*,roomType.name as RoomTypeName from Rooms as r inner join RoomTypes as roomType on r.RoomTypeId=roomType.Id";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", id);
@@ -95,7 +95,7 @@ namespace LibraryCore.DataAccess.SqlServer
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
                 conn.Open();
-                string query = "select * from Rooms where";
+                string query = "select r.*,roomType.name as RoomTypeName from Rooms as r inner join RoomTypes as roomType on r.RoomTypeId=roomType.Id";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     var reader = cmd.ExecuteReader();
