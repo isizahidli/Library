@@ -1,9 +1,9 @@
-﻿using System;
+﻿using LibraryCore.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Library.Models
 {
@@ -35,9 +35,12 @@ namespace Library.Models
         public int Children { get; set; }
         public decimal Amount { get; set; }
         public Status Status { get; set; }
-    
-      
 
-        
+        public bool Contains(string searchText)
+        {
+            var lowerText = searchText.ToLower(); // or ToUpper()
+
+            return (Customer.Name != null && Customer.Name.ToLower().Contains(lowerText));
+        }
     }
 }

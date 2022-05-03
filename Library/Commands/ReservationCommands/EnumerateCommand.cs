@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Library.Commands.ReservationCommands
 {
-    internal class EnumerateCommand : ReservationBaseCommand
+    public class EnumerateCommand : ReservationBaseCommand
     {
         public EnumerateCommand(ReservationViewModel viewModel): base(viewModel) { }
 

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Library.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for WriterControl.xaml
+    /// Interaction logic for EmployeeControl.xaml
     /// </summary>
-    public partial class WriterControl : UserControl
+    public partial class EmployeeControl : UserControl
     {
-        public WriterControl()
+        public EmployeeControl()
         {
             InitializeComponent();
         }

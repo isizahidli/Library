@@ -90,12 +90,13 @@
                         <Grid Name="grdCatalogs" Height="0" >
                             <StackPanel>
                                 <Button Style="{StaticResource btnMenu}" Name="btnBooks"  Content="Kitablar"/>
-                                <Button Command="{Binding OpenBranch}" Style="{StaticResource btnMenu}" Name="btnBranches"  Content="Filiallar"/>
+                                <Button Command="{Binding OpenDepartments}" Style="{StaticResource btnMenu}" Name="btnBranches"  Content="Filiallar"/>
                                 <Button Command="{Binding OpenRoomTypes}" Style="{StaticResource btnMenu}" Name="btnRoomTypes"  Content="Room types"/>
                                 <Button Command="{Binding OpenServices}" Style="{StaticResource btnMenu}" Name="btnServices"  Content="Services"/>
-                                <Button Style="{StaticResource btnMenu}" Name="btnWriters"  Content="Müəlliflər"/>
-                                <Button Style="{StaticResource btnMenu}" Name="btnSellers"  Content="Satıcılar"/>
-                                <Button Style="{StaticResource btnMenu}" Name="btnCustomers"  Content="Alıcılar"/>
+                                <Button Command="{Binding OpenCustomers}" Style="{StaticResource btnMenu}" Name="btnCustomers"  Content="Services"/>
+                                <Button Command="{Binding OpenRooms}" Style="{StaticResource btnMenu}" Name="btnRooms"  Content="Services"/>
+                                <Button Command="{Binding OpenReservations}" Style="{StaticResource btnMenu}" Name="btnReservations"  Content="Services"/>
+                                <Button Command="{Binding OpenEmployees}" Style="{StaticResource btnMenu}" Name="btnEmployees"  Content="Services"/>
                             </StackPanel>
                         </Grid>
 

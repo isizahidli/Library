@@ -9,8 +9,11 @@ namespace Library.ViewModels
 
         public OpenRoomTypesCommand OpenRoomTypes => new OpenRoomTypesCommand(this);
         public OpenServicesCommand OpenServices => new OpenServicesCommand(this);
-        public OpenBookCommand OpenBook => new OpenBookCommand(this);
-        public OpenAddSalaryCommand OpenAddSalary => new OpenAddSalaryCommand(this);
+        public OpenDepartmentsCommand OpenDepartments => new OpenDepartmentsCommand(this);
+        public OpenEmployeesCommand OpenEmployees => new OpenEmployeesCommand(this);
+        public OpenReservationsCommand OpenReservations => new OpenReservationsCommand(this);
+        public OpenRoomsCommand OpenRooms => new OpenRoomsCommand(this);
+        public OpenCustomersCommand OpenCustomers => new OpenCustomersCommand(this);
 
         public Grid Grid { get; set; }
 

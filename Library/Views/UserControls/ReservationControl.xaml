@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="Library.Views.UserControls.ReservationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library.Views.UserControls"
+             xmlns:components="clr-namespace:Library.Views.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="DarkGray" BorderThickness="5">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+
+                <components:ControlHeader/>
+                <components:MessageDialog Height="0" x:Name="MessageDialog"/>
+
+                <Grid Background="LightGray" >
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Style="{StaticResource grdForm}" Margin="0 0 30 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" >
+                            <TextBlock Height="25" FontSize="15" HorizontalAlignment="Left" Margin="5 5">Customer</TextBlock>
+                            <TextBlock Height="25" FontSize="15" HorizontalAlignment="Left" Margin="5 5">Room</TextBlock>
+                            <TextBlock Height="25" FontSize="15" HorizontalAlignment="Left" Margin="5 5">Reservation date</TextBlock>
+                            <TextBlock Height="25" FontSize="15" HorizontalAlignment="Left" Margin="5 5">CheckIn date</TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+                            <ComboBox Text="{Binding CurrentReservation.Customer.Id}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
+                            <ComboBox Text="{Binding CurrentReservation.Room.Id}" Height="60" FontSize="15" Margin="5 0 0 0"  />
+                            <DatePicker Text="{Binding CurrentReservation.ReservsationDate}" Height="60" FontSize="15" Margin="5 0 0 0"  />
+                            <DatePicker Text="{Binding CurrentReservation.CheckInDate}" Height="60" FontSize="15" Margin="5 0 0 0"  />
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2" Grid.Row="1">
+                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >CheckOut Date</TextBlock>
+                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Adults</TextBlock>
+                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Children</TextBlock>
+                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Amount</TextBlock>
+                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Status</TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="3">
+                            <DatePicker Text="{Binding CurrentReservation.CheckOutDate}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                            <TextBox Text="{Binding CurrentReservation.Adults}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                            <TextBox Text="{Binding CurrentReservation.Children}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                            <TextBox Text="{Binding CurrentReservation.Amount}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                            <ComboBox Text="{Binding CurrentReservation.Status}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel Grid.Column="1">
+                        <components:FormButtons/>
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
+
+            <ListView x:Name="MainList" ItemsSource="{Binding Reservations}"
+                      SelectedItem="{Binding SelectedReservation}"
+                      Grid.Row="1"  Style="{StaticResource listViewCustom}">
+
+                <ListView.View>
+                    <GridView >
+                        <GridViewColumn  DisplayMemberBinding="{Binding No}"  Header="No" Width="25"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding Customer.Name}" Header="Ad" Width="100"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding Room.RoomNumber}" Header="RoomNumber" Width="100"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding ReservationDate}" Header="ReservationDate" Width="100"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding CheckInDate}" Header="CheckInDate" Width="100"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding CheckOutDate}" Header="CheckOutDate" Width="100"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding Adults}" Header="Adults" Width="100"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding Children}" Header="Children" Width="100"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding Amount}" Header="Amount" Width="500"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding Status}" Header="Status" Width="500"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Grid Grid.Row="2" Style="{StaticResource grdSearch}">
+                <components:Search Grid.Column="0"/>
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>

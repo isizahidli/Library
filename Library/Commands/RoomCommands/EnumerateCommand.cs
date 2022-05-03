@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Commands.RoomCommands
 {
-    internal class EnumerateCommand : RoomBaseCommand
+    public class EnumerateCommand : RoomBaseCommand
     {
         public EnumerateCommand(RoomViewModel viewModel): base(viewModel) { }
 

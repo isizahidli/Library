@@ -14,6 +14,8 @@ namespace Library.Commands.MainPageCommands
 {
     public class OpenRoomsCommand : MainPageBaseCommand
     {
+        public OpenRoomsCommand(MainPageViewModel viewModel) : base(viewModel) { }
+
         public override void Execute(object parameter)
         {
             RoomControl roomControl = new RoomControl();

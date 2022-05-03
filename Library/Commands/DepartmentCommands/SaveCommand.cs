@@ -57,15 +57,15 @@ namespace Library.Commands.DepartmentCommands
                     BusinessUtil.DoAnimation(viewModel.MessageDialog);
 
                     // reload all branches
-                    List<Service> services = DB.ServiceRepository.Get();
-                    List<ServiceModel> models = new List<ServiceModel>();
+                    List<Department> services = DB.DepartmentRepository.Get();
+                    List<DepartmentModel> models = new List<DepartmentModel>();
                     foreach (var entity in services)
                     {
-                        var model = ServiceMapper.Map(entity);
+                        var model = DepartmentMapper.Map(entity);
                         models.Add(model);
                     }
 
-                    viewModel.AllServices = new List<ServiceModel>(models);
+                    viewModel.AllDepartments = new List<DepartmentModel>(models);
                     viewModel.InitializeViewModel();
                 }
             }
@@ -73,7 +73,7 @@ namespace Library.Commands.DepartmentCommands
 
         private bool IsValid()
         {
-            var branch = viewModel.CurrentService;
+            var branch = viewModel.CurrentDepartment;
 
             if (string.IsNullOrEmpty(branch.Name))
             {
@@ -92,7 +92,7 @@ namespace Library.Commands.DepartmentCommands
 
         private void CorrectData()
         {
-            viewModel.CurrentService.Name = viewModel.CurrentService.Name.Trim();
+            viewModel.CurrentDepartment.Name = viewModel.CurrentDepartment.Name.Trim();
         }
     }
 }

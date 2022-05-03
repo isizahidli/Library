@@ -1,10 +1,9 @@
-﻿<UserControl x:Class="Library.Views.UserControls.WriterControl"
+﻿<UserControl x:Class="Library.Views.UserControls.DepartmentControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Library.Views.UserControls"
-             xmlns:components="clr-namespace:Library.Views.Components"
+             xmlns:local="clr-namespace:Library.Views.UserControls" xmlns:components="clr-namespace:Library.Views.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Border Background="DarkGray" BorderThickness="5">
@@ -19,7 +18,7 @@
             <StackPanel Grid.Row="0">
 
                 <components:ControlHeader/>
-                <!--<components:ErrorDialog Height="0" x:Name="ErrorDialog"/>-->
+                <components:MessageDialog Height="0" x:Name="MessageDialog"/>
 
                 <Grid Background="LightGray" >
 
@@ -36,20 +35,22 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <StackPanel Grid.Column="0">
-                            <TextBlock Height="25" FontSize="15" HorizontalAlignment="Left" Margin="5 5">Ad</TextBlock>
+                        <StackPanel Grid.Column="0" >
+                            <TextBlock Height="25" FontSize="15" HorizontalAlignment="Left" Margin="5 5">Name</TextBlock>
+                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Gender</TextBlock>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1">
-                            <TextBox FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" Text=""/>
+                            <TextBox Text="{Binding CurrentDepartment.Name}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
+                            <CheckBox IsChecked="{Binding CurrentRoomType.Gender}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Grid.Row="1">
-                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Qeyd</TextBlock>
+                            <TextBlock Height="25" FontSize="15" HorizontalAlignment="Left" Margin="5 5">Description</TextBlock>
                         </StackPanel>
 
                         <StackPanel Grid.Column="3">
-                            <TextBox Height="60" FontSize="15" Margin="5 0 0 0"   Text=""/>
+                            <TextBox Text="{Binding CurrentDepartment.Description}" Height="60" FontSize="15" Margin="5 0 0 0"  />
                         </StackPanel>
 
                     </Grid>
@@ -61,21 +62,21 @@
 
             </StackPanel>
 
-            <ListView x:Name="MainList" Grid.Row="1"  Style="{StaticResource listViewCustom}">
+            <ListView x:Name="MainList" ItemsSource="{Binding Departments}"
+                      SelectedItem="{Binding SelectedDepartment}"
+                      Grid.Row="1"  Style="{StaticResource listViewCustom}">
 
                 <ListView.View>
                     <GridView >
-                        <GridViewColumn  Header="No" Width="25"/>
-                        <GridViewColumn  Header="Tam adı" Width="200"/>
-                        <GridViewColumn  Header="Qeyd" Width="500"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding No}"  Header="No" Width="25"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding Gender}" Header="Ad" Width="100"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding Description}" Header="Qeyd" Width="500"/>
                     </GridView>
                 </ListView.View>
             </ListView>
 
             <Grid Grid.Row="2" Style="{StaticResource grdSearch}">
-                <DockPanel>
-                    <components:Search/>
-                </DockPanel>
+                <components:Search Grid.Column="0"/>
             </Grid>
 
         </Grid>

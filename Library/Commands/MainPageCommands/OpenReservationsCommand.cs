@@ -13,14 +13,16 @@ namespace Library.Commands.MainPageCommands
 {
     public class OpenReservationsCommand : MainPageBaseCommand
     {
+        public OpenReservationsCommand(MainPageViewModel viewModel): base(viewModel) { }
+
         public override void Execute(object parameter)
         {
             ReservationControl reservationControl = new ReservationControl();
-            ReservationModel reservationViewModel = new ReservationViewModel();
+            ReservationViewModel reservationViewModel = new ReservationViewModel();
             reservationViewModel.MessageDialog = reservationControl.MessageDialog;
 
             List<Reservation> reservations = DB.ReservationRepository.Get();
-            List<Reservation> models = new List<ReservationModel>();
+            List<ReservationModel> models = new List<ReservationModel>();
             foreach (var reservation in reservations)
             {
                 var model = ReservationMapper.Map(reservation);

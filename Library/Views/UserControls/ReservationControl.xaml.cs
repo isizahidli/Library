@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Library.Views.Windows
+namespace Library.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for AddSalaryWindow.xaml
+    /// Interaction logic for ReservationControl.xaml
     /// </summary>
-    public partial class AddSalaryWindow : Window
+    public partial class ReservationControl : UserControl
     {
-        public AddSalaryWindow()
+        public ReservationControl()
         {
             InitializeComponent();
         }

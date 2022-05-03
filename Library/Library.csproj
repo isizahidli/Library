@@ -109,33 +109,34 @@
     <Compile Include="Commands\ConfigurationCommands\CancelConfigurationCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\ConfigurationCommands\SaveSqlConfigurationCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\CustomerCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\CustomerCommands\EnumerateCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\CustomerCommands\RejectCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\CustomerCommands\SaveCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\CustomerCommands\CustomerBaseCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\DepartmentCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\DepartmentCommands\EnumerateCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\DepartmentCommands\RejectCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\DepartmentCommands\SaveCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\DepartmentCommands\DepartmentBaseCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\EmployeeCommands\EmployeeBaseCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\EmployeeCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\EmployeeCommands\EnumerateCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\EmployeeCommands\RejectCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\EmployeeCommands\SaveCommand.cs" />
+    <Compile Include="Commands\CustomerCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\CustomerCommands\EnumerateCommand.cs" />
+    <Compile Include="Commands\CustomerCommands\RejectCommand.cs" />
+    <Compile Include="Commands\CustomerCommands\SaveCommand.cs" />
+    <Compile Include="Commands\CustomerCommands\CustomerBaseCommand.cs" />
+    <Compile Include="Commands\DepartmentCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\DepartmentCommands\EnumerateCommand.cs" />
+    <Compile Include="Commands\DepartmentCommands\RejectCommand.cs" />
+    <Compile Include="Commands\DepartmentCommands\SaveCommand.cs" />
+    <Compile Include="Commands\DepartmentCommands\DepartmentBaseCommand.cs" />
+    <Compile Include="Commands\EmployeeCommands\EmployeeBaseCommand.cs" />
+    <Compile Include="Commands\EmployeeCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\EmployeeCommands\EnumerateCommand.cs" />
+    <Compile Include="Commands\EmployeeCommands\RejectCommand.cs" />
+    <Compile Include="Commands\EmployeeCommands\SaveCommand.cs" />
     <Compile Include="Commands\MainPageCommands\MainPageBaseCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\OpenAddSalaryCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\OpenBookCommand.cs" />
+    <Compile Include="Commands\MainPageCommands\OpenCustomersCommand.cs" />
+    <Compile Include="Commands\MainPageCommands\OpenDepartmentsCommand.cs" />
+    <Compile Include="Commands\MainPageCommands\OpenEmployeesCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenReservationsCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenRoomsCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenRoomTypesCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenServicesCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\ReservationCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\ReservationCommands\EnumerateCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\ReservationCommands\RejectCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\ReservationCommands\ReservationBaseCommand.cs" />
-    <Compile Include="Commands\MainPageCommands\ReservationCommands\SaveCommand.cs" />
+    <Compile Include="Commands\ReservationCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\ReservationCommands\EnumerateCommand.cs" />
+    <Compile Include="Commands\ReservationCommands\RejectCommand.cs" />
+    <Compile Include="Commands\ReservationCommands\ReservationBaseCommand.cs" />
+    <Compile Include="Commands\ReservationCommands\SaveCommand.cs" />
     <Compile Include="Commands\RoomCommands\DeleteCommand.cs" />
     <Compile Include="Commands\RoomCommands\EnumerateCommand.cs" />
     <Compile Include="Commands\RoomCommands\RejectCommand.cs" />
@@ -159,8 +160,6 @@
     <Compile Include="Mappers\RoomTypeMapper.cs" />
     <Compile Include="Mappers\ServiceMapper.cs" />
     <Compile Include="Models\BaseModel.cs" />
-    <Compile Include="Models\BookModel.cs" />
-    <Compile Include="Models\BranchModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
@@ -207,6 +206,18 @@
     <Compile Include="Views\Components\Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\CustomerControl.xaml.cs">
+      <DependentUpon>CustomerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\DepartmentControl.xaml.cs">
+      <DependentUpon>DepartmentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\EmployeeControl.xaml.cs">
+      <DependentUpon>EmployeeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ReservationControl.xaml.cs">
+      <DependentUpon>ReservationControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\RoomControl.xaml.cs">
       <DependentUpon>RoomControl.xaml</DependentUpon>
     </Compile>
@@ -216,9 +227,6 @@
     <Compile Include="Views\UserControls\ServiceControl.xaml.cs">
       <DependentUpon>ServiceControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\AddSalaryWindow.xaml.cs">
-      <DependentUpon>AddSalaryWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Windows\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -227,9 +235,6 @@
     </Compile>
     <Compile Include="Views\Windows\SqlConfiguration.xaml.cs">
       <DependentUpon>SqlConfiguration.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UserControls\WriterControl.xaml.cs">
-      <DependentUpon>WriterControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\UnknownErrorWindow.xaml.cs">
       <DependentUpon>UnknownErrorWindow.xaml</DependentUpon>
@@ -290,6 +295,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserControls\CustomerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\DepartmentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\EmployeeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ReservationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserControls\RoomControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -302,10 +323,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\AddSalaryWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Windows\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -315,10 +332,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Windows\SqlConfiguration.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\UserControls\WriterControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
