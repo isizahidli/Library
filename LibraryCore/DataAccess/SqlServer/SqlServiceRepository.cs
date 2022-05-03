@@ -54,7 +54,7 @@ namespace LibraryCore.DataAccess.SqlServer
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
                 conn.Open();
-                string query = "select * from Services where Id = @Id";
+                string query = "select s.*,d.name as DepName from Services as s inner join Departments as d on s.departmentId=d.Id";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", id);
@@ -92,7 +92,7 @@ namespace LibraryCore.DataAccess.SqlServer
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
                 conn.Open();
-                string query = "select * from Services where";
+                string query = "select s.*,d.name as DepName from Services as s inner join Departments as d on s.departmentId=d.Id";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     var reader = cmd.ExecuteReader();

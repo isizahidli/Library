@@ -8,6 +8,6 @@ namespace LibraryCore.Domain.Entities
         public int Id { get; set; }
         public string Username { get; set; }
         public string PasswordHash { get; set; }
-        public Status Status { get; set; }
+        public Enum Status { get; set; }
     }
 }
