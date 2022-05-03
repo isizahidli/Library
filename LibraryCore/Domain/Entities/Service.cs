@@ -9,6 +9,11 @@ namespace LibraryCore.Domain.Entities
 {
     public class Service
     {
+        public Service()
+        {
+            Department = new Department();
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

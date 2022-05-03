@@ -8,6 +8,12 @@ namespace Library.Models
 {
     public class EmployeeModel : BaseModel
     {
+
+        public EmployeeModel()
+        {
+            Department = new DepartmentModel();
+        }
+
         public override object this[string propName]
         {
             get

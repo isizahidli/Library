@@ -9,6 +9,12 @@ namespace LibraryCore.Domain.Entities
 {
     public class Reservation
     {
+        public Reservation()
+        {
+            Customer = new Customer();
+            Room = new Room();
+        }
+
         public int Id { get; set; }
         public Customer Customer { get; set; }
         public Room Room { get; set; }
