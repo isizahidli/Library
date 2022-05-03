@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryCore.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,6 @@ namespace LibraryCore.Domain.Entities
         public string ZipCode { get; set; }
         public string PassportNo { get; set; }
         public bool Gender { get; set; }
-        public Enum Status { get; set; }
+        public Status Status { get; set; }
     }
 }

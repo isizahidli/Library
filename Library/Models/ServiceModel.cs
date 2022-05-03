@@ -9,6 +9,11 @@ namespace Library.Models
 {
     public class ServiceModel : BaseModel
     {
+        public ServiceModel()
+        {
+            Department = new DepartmentModel();
+        }
+
         public override object this[string propName]
         {
             get
@@ -28,6 +33,7 @@ namespace Library.Models
 
         public string Name { get; set; }
         public string Description { get; set; }
+        public DepartmentModel Department { get; set; }
         public Status Status { get; set; }
         public decimal Price { get; set; }
 
