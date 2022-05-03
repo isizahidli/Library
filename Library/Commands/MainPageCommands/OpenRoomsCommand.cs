@@ -28,7 +28,7 @@ namespace Library.Commands.MainPageCommands
                 models.Add(model);
             }
 
-            roomViewModel.AllRoomTypes = new List<RoomModel>(models);
+            roomViewModel.AllRooms = new List<RoomModel>(models);
             roomViewModel.InitializeViewModel();
             roomControl.DataContext = roomViewModel;
 

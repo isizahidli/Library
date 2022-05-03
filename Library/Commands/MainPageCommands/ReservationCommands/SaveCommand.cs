@@ -9,11 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Commands.RoomCommands
+namespace Library.Commands.ReservationCommands
 {
-    public class SaveCommand : RoomBaseCommand
+    public class SaveCommand : ReservationBaseCommand
     {
-        public SaveCommand(RoomViewModel viewModel) : base(viewModel) { }
+        public SaveCommand(ReservationViewModel viewModel) : base(viewModel) { }
 
         public override void Execute(object parameter)
         {
@@ -34,35 +34,35 @@ namespace Library.Commands.RoomCommands
 
                     if (situation == (int)Constants.SITUATIONS.ADD)
                     {
-                        var room = RoomMapper.Map(viewModel.CurrentRoom);
+                        var reservation = ReservationMapper.Map(viewModel.CurrentReservation);
 
-                        DB.RoomRepository.Add(room);
+                        DB.ReservationRepository.Add(reservation);
                     }
                     else if (situation == (int)Constants.SITUATIONS.EDIT)
                     {
-                        int id = viewModel.CurrentRoom.Id;
-                        var existingRoomType = DB.RoomRepository.FindById(id);
-                        if (existingRoomType != null)
+                        int id = viewModel.CurrentReservation.Id;
+                        var existingRoom = DB.ReservationRepository.FindById(id);
+                        if (existingRoom != null)
                         {
-                            existingRoomType = RoomMapper.Map(viewModel.CurrentRoom);
-                            existingRoomType.Id = id;
+                            existingRoom = ReservationMapper.Map(viewModel.CurrentReservation);
+                            existingRoom.Id = id;
 
-                            DB.RoomRepository.Update(existingRoomType);
+                            DB.ReservationRepository.Update(existingRoom);
                         }
                     }
 
                     viewModel.Message = "Əməliyyat uğurla həyata keçdi";
                     BusinessUtil.DoAnimation(viewModel.MessageDialog);
 
-                    List<Room> rooms = DB.RoomRepository.Get();
-                    List<RoomModel> models = new List<RoomModel>();
-                    foreach (var entity in rooms)
+                    List<Reservation> reservations = DB.ReservationRepository.Get();
+                    List<ReservationModel> models = new List<ReservationModel>();
+                    foreach (var entity in reservations)
                     {
-                        var model = RoomMapper.Map(entity);
+                        var model = ReservationMapper.Map(entity);
                         models.Add(model);
                     }
 
-                    viewModel.AllRooms = new List<RoomModel>(models);
+                    viewModel.AllReservations = new List<ReservationModel>(models);
                     viewModel.InitializeViewModel();
                 }
             }

@@ -1,4 +1,5 @@
-﻿using Library.Models;
+﻿using Library.Commands.EmployeeCommands;
+using Library.Models;
 using Library.Utils;
 using System;
 using System.Collections.Generic;
@@ -8,59 +9,59 @@ using System.Threading.Tasks;
 
 namespace Library.ViewModels.UserControls
 {
-    public class RoomViewModel : UCViewModel
+    public class EmployeeViewModel:UCViewModel
     {
-        public RoomViewModel()
+        public EmployeeViewModel()
         {
-            Header = "Rooms";
+            Header = "Employees";
         }
 
         public void InitializeViewModel()
         {
-            CurrentRoom = new RoomModel();
+            CurrentEmployee = new EmployeeModel();
             CurrentSituation = (int)Constants.SITUATIONS.NORMAL;
-            selectedRoom = null;
-            rooms = new List<RoomModel>(AllRooms);
+            selectedEmployee = null;
+            employees = new List<EmployeeModel>(AllEmployees);
             Enumerate.Execute(null);
         }
 
-        private RoomModel currentRoom;
-        public RoomModel CurrentRoom
+        private EmployeeModel currentEmployee;
+        public EmployeeModel CurrentEmployee
         {
-            get => currentRoom;
+            get => currentEmployee;
             set
             {
-                currentRoom = value;
-                OnPropertyChanged(nameof(CurrentRoom));
+                currentEmployee = value;
+                OnPropertyChanged(nameof(CurrentEmployee));
             }
         }
 
-        private RoomModel selectedRoom;
-        public RoomModel SelectedRoom
+        private EmployeeModel selectedEmployee;
+        public EmployeeModel SelectedEmployee
         {
-            get => selectedRoom;
+            get => selectedEmployee;
             set
             {
-                selectedRoom = value;
+                selectedEmployee = value;
                 if (value != null)
                 {
-                    CurrentRoom = SelectedRoom;
+                    CurrentEmployee = SelectedEmployee;
                     CurrentSituation = (int)Constants.SITUATIONS.SELECTED;
                 }
-                OnPropertyChanged(nameof(SelectedRoom));
+                OnPropertyChanged(nameof(SelectedEmployee));
             }
         }
 
-        public List<RoomModel> AllRooms;
+        public List<EmployeeModel> AllEmployees;
 
-        private List<RoomModel> rooms;
-        public List<RoomModel> Rooms
+        private List<EmployeeModel> employees;
+        public List<EmployeeModel> Employees
         {
-            get => rooms ?? (rooms = new List<RoomModel>());
+            get => employees ?? (employees = new List<EmployeeModel>());
             set
             {
-                rooms = value;
-                OnPropertyChanged(nameof(Rooms));
+                employees = value;
+                OnPropertyChanged(nameof(Employees));
             }
         }
 
@@ -76,11 +77,11 @@ namespace Library.ViewModels.UserControls
 
                 if (string.IsNullOrEmpty(value))
                 {
-                    Rooms = new List<RoomModel>(AllRooms);
+                    Employees = new List<EmployeeModel>(AllEmployees);
                 }
                 else
                 {
-                    Rooms = AllRooms.Where(x => x.Contains(searchText)).ToList();
+                    Employees = AllEmployees.Where(x => x.Contains(searchText)).ToList();
                 }
 
                 Enumerate.Execute(null);

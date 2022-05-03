@@ -8,12 +8,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
-namespace Library.Commands.RoomCommands
+namespace Library.Commands.EmployeeCommands
 {
-    public class SaveCommand : RoomBaseCommand
+    public class SaveCommand : EmployeeBaseCommand
     {
-        public SaveCommand(RoomViewModel viewModel) : base(viewModel) { }
+        public SaveCommand(EmployeeViewModel viewModel) : base(viewModel) { }
 
         public override void Execute(object parameter)
         {
@@ -34,35 +35,36 @@ namespace Library.Commands.RoomCommands
 
                     if (situation == (int)Constants.SITUATIONS.ADD)
                     {
-                        var room = RoomMapper.Map(viewModel.CurrentRoom);
+                        var employee = EmployeeMapper.Map(viewModel.CurrentEmployee);
 
-                        DB.RoomRepository.Add(room);
+                        DB.EmployeeRepository.Add(employee);
                     }
                     else if (situation == (int)Constants.SITUATIONS.EDIT)
                     {
-                        int id = viewModel.CurrentRoom.Id;
-                        var existingRoomType = DB.RoomRepository.FindById(id);
-                        if (existingRoomType != null)
+                        int id = viewModel.CurrentEmployee.Id;
+                        var existingEmployee = DB.EmployeeRepository.FindById(id);
+                        if (existingEmployee != null)
                         {
-                            existingRoomType = RoomMapper.Map(viewModel.CurrentRoom);
-                            existingRoomType.Id = id;
+                            existingEmployee = EmployeeMapper.Map(viewModel.CurrentEmployee);
+                            existingEmployee.Id = id;
 
-                            DB.RoomRepository.Update(existingRoomType);
+                            DB.EmployeeRepository.Update(existingEmployee);
                         }
                     }
 
                     viewModel.Message = "Əməliyyat uğurla həyata keçdi";
                     BusinessUtil.DoAnimation(viewModel.MessageDialog);
 
-                    List<Room> rooms = DB.RoomRepository.Get();
-                    List<RoomModel> models = new List<RoomModel>();
-                    foreach (var entity in rooms)
+                    // reload all branches
+                    List<Employee> employees = DB.EmployeeRepository.Get();
+                    List<EmployeeModel> models = new List<EmployeeModel>();
+                    foreach (var entity in employees)
                     {
-                        var model = RoomMapper.Map(entity);
+                        var model = EmployeeMapper.Map(entity);
                         models.Add(model);
                     }
 
-                    viewModel.AllRooms = new List<RoomModel>(models);
+                    viewModel.AllEmployees = new List<EmployeeModel>(models);
                     viewModel.InitializeViewModel();
                 }
             }

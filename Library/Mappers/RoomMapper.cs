@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Library.Mappers
 {
-    public class RoomMapper
+    public static class RoomMapper
     {
         public static RoomModel Map(Room room)
         {

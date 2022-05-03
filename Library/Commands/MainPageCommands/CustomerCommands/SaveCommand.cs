@@ -8,12 +8,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
-namespace Library.Commands.RoomCommands
+namespace Library.Commands.CustomerCommands
 {
-    public class SaveCommand : RoomBaseCommand
+    public class SaveCommand : CustomerBaseCommand
     {
-        public SaveCommand(RoomViewModel viewModel) : base(viewModel) { }
+        public SaveCommand(CustomerViewModel viewModel) : base(viewModel) { }
 
         public override void Execute(object parameter)
         {
@@ -34,35 +35,36 @@ namespace Library.Commands.RoomCommands
 
                     if (situation == (int)Constants.SITUATIONS.ADD)
                     {
-                        var room = RoomMapper.Map(viewModel.CurrentRoom);
+                        var customer = CustomerMapper.Map(viewModel.CurrentCustomer);
 
-                        DB.RoomRepository.Add(room);
+                        DB.CustomerRepository.Add(customer);
                     }
                     else if (situation == (int)Constants.SITUATIONS.EDIT)
                     {
-                        int id = viewModel.CurrentRoom.Id;
-                        var existingRoomType = DB.RoomRepository.FindById(id);
-                        if (existingRoomType != null)
+                        int id = viewModel.CurrentCustomer.Id;
+                        var existingCustomer = DB.CustomerRepository.FindById(id);
+                        if (existingCustomer != null)
                         {
-                            existingRoomType = RoomMapper.Map(viewModel.CurrentRoom);
-                            existingRoomType.Id = id;
+                            existingCustomer = CustomerMapper.Map(viewModel.CurrentCustomer);
+                            existingCustomer.Id = id;
 
-                            DB.RoomRepository.Update(existingRoomType);
+                            DB.CustomerRepository.Update(existingCustomer);
                         }
                     }
 
                     viewModel.Message = "Əməliyyat uğurla həyata keçdi";
                     BusinessUtil.DoAnimation(viewModel.MessageDialog);
 
-                    List<Room> rooms = DB.RoomRepository.Get();
-                    List<RoomModel> models = new List<RoomModel>();
-                    foreach (var entity in rooms)
+                    // reload all branches
+                    List<Customer> customers = DB.CustomerRepository.Get();
+                    List<CustomerModel> models = new List<CustomerModel>();
+                    foreach (var entity in customers)
                     {
-                        var model = RoomMapper.Map(entity);
+                        var model = CustomerMapper.Map(entity);
                         models.Add(model);
                     }
 
-                    viewModel.AllRooms = new List<RoomModel>(models);
+                    viewModel.AllCustomers = new List<CustomerModel>(models);
                     viewModel.InitializeViewModel();
                 }
             }

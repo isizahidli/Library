@@ -1,4 +1,5 @@
-﻿using Library.Models;
+﻿using Library.Commands.CustomerCommands;
+using Library.Models;
 using Library.Utils;
 using System;
 using System.Collections.Generic;
@@ -8,59 +9,59 @@ using System.Threading.Tasks;
 
 namespace Library.ViewModels.UserControls
 {
-    public class RoomViewModel : UCViewModel
+    public class CustomerViewModel:UCViewModel
     {
-        public RoomViewModel()
+        public CustomerViewModel()
         {
-            Header = "Rooms";
+            Header = "Customers";
         }
 
         public void InitializeViewModel()
         {
-            CurrentRoom = new RoomModel();
+            CurrentCustomer = new CustomerModel();
             CurrentSituation = (int)Constants.SITUATIONS.NORMAL;
-            selectedRoom = null;
-            rooms = new List<RoomModel>(AllRooms);
+            selectedCustomer = null;
+            customers = new List<CustomerModel>(AllCustomers);
             Enumerate.Execute(null);
         }
 
-        private RoomModel currentRoom;
-        public RoomModel CurrentRoom
+        private CustomerModel currentCustomer;
+        public CustomerModel CurrentCustomer
         {
-            get => currentRoom;
+            get => currentCustomer;
             set
             {
-                currentRoom = value;
-                OnPropertyChanged(nameof(CurrentRoom));
+                currentCustomer = value;
+                OnPropertyChanged(nameof(CurrentCustomer));
             }
         }
 
-        private RoomModel selectedRoom;
-        public RoomModel SelectedRoom
+        private CustomerModel selectedCustomer;
+        public CustomerModel SelectedCustomer
         {
-            get => selectedRoom;
+            get => selectedCustomer;
             set
             {
-                selectedRoom = value;
+                selectedCustomer = value;
                 if (value != null)
                 {
-                    CurrentRoom = SelectedRoom;
+                    CurrentCustomer = SelectedCustomer;
                     CurrentSituation = (int)Constants.SITUATIONS.SELECTED;
                 }
-                OnPropertyChanged(nameof(SelectedRoom));
+                OnPropertyChanged(nameof(SelectedCustomer));
             }
         }
 
-        public List<RoomModel> AllRooms;
+        public List<CustomerModel> AllCustomers;
 
-        private List<RoomModel> rooms;
-        public List<RoomModel> Rooms
+        private List<CustomerModel> customers;
+        public List<CustomerModel> Customers
         {
-            get => rooms ?? (rooms = new List<RoomModel>());
+            get => customers ?? (customers = new List <CustomerModel>());
             set
             {
-                rooms = value;
-                OnPropertyChanged(nameof(Rooms));
+                customers = value;
+                OnPropertyChanged(nameof(Customers));
             }
         }
 
@@ -76,11 +77,11 @@ namespace Library.ViewModels.UserControls
 
                 if (string.IsNullOrEmpty(value))
                 {
-                    Rooms = new List<RoomModel>(AllRooms);
+                    Customers = new List<CustomerModel>(AllCustomers);
                 }
                 else
                 {
-                    Rooms = AllRooms.Where(x => x.Contains(searchText)).ToList();
+                    Customers = AllCustomers.Where(x => x.Contains(searchText)).ToList();
                 }
 
                 Enumerate.Execute(null);

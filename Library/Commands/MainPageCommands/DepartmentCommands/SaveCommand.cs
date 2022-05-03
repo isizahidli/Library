@@ -1,4 +1,5 @@
-﻿using Library.Mappers;
+﻿using Library.Commands.ServiceCommands;
+using Library.Mappers;
 using Library.Models;
 using Library.Utils;
 using Library.ViewModels.UserControls;
@@ -10,11 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Library.Commands.RoomTypeCommands
+namespace Library.Commands.DepartmentCommands
 {
-    public class SaveCommand : RoomTypeBaseCommand
+    public class SaveCommand : DepartmentBaseCommand
     {
-        public SaveCommand(RoomTypeViewModel viewModel) : base(viewModel) { }
+        public SaveCommand(DepartmentViewModel viewModel) : base(viewModel) { }
 
         public override void Execute(object parameter)
         {
@@ -35,35 +36,36 @@ namespace Library.Commands.RoomTypeCommands
 
                     if (situation == (int)Constants.SITUATIONS.ADD)
                     {
-                        var service = RoomTypeMapper.Map(viewModel.CurrentRoomType);
+                        var department = DepartmentMapper.Map(viewModel.CurrentDepartment);
 
-                        DB.RoomTypeRepository.Add(service);
+                        DB.DepartmentRepository.Add(department);
                     }
                     else if (situation == (int)Constants.SITUATIONS.EDIT)
                     {
-                        int id = viewModel.CurrentRoomType.Id;
-                        var existingRoomType = DB.RoomTypeRepository.FindById(id);
-                        if (existingRoomType != null)
+                        int id = viewModel.CurrentDepartment.Id;
+                        var existingDepartment = DB.DepartmentRepository.FindById(id);
+                        if (existingDepartment != null)
                         {
-                            existingRoomType = RoomTypeMapper.Map(viewModel.CurrentRoomType);
-                            existingRoomType.Id = id;
+                            existingDepartment = DepartmentMapper.Map(viewModel.CurrentDepartment);
+                            existingDepartment.Id = id;
 
-                            DB.RoomTypeRepository.Update(existingRoomType);
+                            DB.DepartmentRepository.Update(existingDepartment);
                         }
                     }
 
                     viewModel.Message = "Əməliyyat uğurla həyata keçdi";
                     BusinessUtil.DoAnimation(viewModel.MessageDialog);
 
-                    List<RoomType> roomTypes = DB.RoomTypeRepository.Get();
-                    List<RoomTypeModel> models = new List<RoomTypeModel>();
-                    foreach (var entity in roomTypes)
+                    // reload all branches
+                    List<Service> services = DB.ServiceRepository.Get();
+                    List<ServiceModel> models = new List<ServiceModel>();
+                    foreach (var entity in services)
                     {
-                        var model = RoomTypeMapper.Map(entity);
+                        var model = ServiceMapper.Map(entity);
                         models.Add(model);
                     }
 
-                    viewModel.AllRoomTypes = new List<RoomTypeModel>(models);
+                    viewModel.AllServices = new List<ServiceModel>(models);
                     viewModel.InitializeViewModel();
                 }
             }
@@ -71,7 +73,7 @@ namespace Library.Commands.RoomTypeCommands
 
         private bool IsValid()
         {
-            var branch = viewModel.CurrentRoomType;
+            var branch = viewModel.CurrentService;
 
             if (string.IsNullOrEmpty(branch.Name))
             {
@@ -90,7 +92,7 @@ namespace Library.Commands.RoomTypeCommands
 
         private void CorrectData()
         {
-            viewModel.CurrentRoomType.Name = viewModel.CurrentRoomType.Name.Trim();
+            viewModel.CurrentService.Name = viewModel.CurrentService.Name.Trim();
         }
     }
 }
