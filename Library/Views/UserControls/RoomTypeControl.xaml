@@ -74,9 +74,9 @@
                     <GridView >
                         <GridViewColumn  DisplayMemberBinding="{Binding No}"  Header="No" Width="25"/>
                         <GridViewColumn  DisplayMemberBinding="{Binding Name}" Header="Ad" Width="100"/>
-                        <GridViewColumn  DisplayMemberBinding="{Binding MaxAdult}" Header="Ünvan" Width="100"/>
-                        <GridViewColumn  DisplayMemberBinding="{Binding MaxChildren}" Header="Əlaqə nömrəsi" Width="100"/>
-                        <GridViewColumn  DisplayMemberBinding="{Binding PricePerNight}" Header="Qeyd" Width="500"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding MaxAdult}" Header="Max adult" Width="100"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding MaxChildren}" Header="Max children" Width="100"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding PricePerNight}" Header="Price per night" Width="500"/>
                         <GridViewColumn  DisplayMemberBinding="{Binding Description}" Header="Qeyd" Width="500"/>
                     </GridView>
                 </ListView.View>

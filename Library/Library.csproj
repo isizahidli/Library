@@ -114,6 +114,11 @@
     <Compile Include="Commands\MainPageCommands\OpenBookCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenRoomTypesCommand.cs" />
     <Compile Include="Commands\MainPageCommands\OpenServicesCommand.cs" />
+    <Compile Include="Commands\RoomCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\RoomCommands\EnumerateCommand.cs" />
+    <Compile Include="Commands\RoomCommands\RejectCommand.cs" />
+    <Compile Include="Commands\RoomCommands\RoomBaseCommand.cs" />
+    <Compile Include="Commands\RoomCommands\SaveCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\DeleteCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\EnumerateCommand.cs" />
     <Compile Include="Commands\RoomTypeCommands\RejectCommand.cs" />
@@ -127,6 +132,7 @@
     <Compile Include="Mappers\CustomerMapper.cs" />
     <Compile Include="Mappers\DepartmentMapper.cs" />
     <Compile Include="Mappers\EmployeeMapper.cs" />
+    <Compile Include="Mappers\RoomMapper.cs" />
     <Compile Include="Mappers\RoomTypeMapper.cs" />
     <Compile Include="Mappers\ServiceMapper.cs" />
     <Compile Include="Models\BaseModel.cs" />
@@ -136,6 +142,7 @@
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
     <Compile Include="Models\RoomTypeModel.cs" />
     <Compile Include="Models\ServiceModel.cs" />
     <Compile Include="Utils\BusinessUtil.cs" />
@@ -145,6 +152,7 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DialogViewModel.cs" />
     <Compile Include="ViewModels\UserControls\RoomTypeViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\RoomViewModel.cs" />
     <Compile Include="ViewModels\UserControls\ServiceViewModel.cs" />
     <Compile Include="ViewModels\UserControls\UCViewModel.cs" />
     <Compile Include="ViewModels\UserControls\WriterViewModel.cs" />
@@ -170,6 +178,9 @@
     </Compile>
     <Compile Include="Views\Components\Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\RoomControl.xaml.cs">
+      <DependentUpon>RoomControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\RoomTypeControl.xaml.cs">
       <DependentUpon>RoomTypeControl.xaml</DependentUpon>
@@ -248,6 +259,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Components\Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\RoomControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

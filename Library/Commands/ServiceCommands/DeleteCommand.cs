@@ -44,7 +44,7 @@ namespace Library.Commands.ServiceCommands
                 viewModel.Services = new List<ServiceModel>(models);
                 viewModel.InitializeViewModel();
 
-                Logger.LogInformation($"Branch: {id}  has been deleted");
+                Logger.LogInformation($"Service: {id}  has been deleted");
             }
         }
     }
