@@ -57,7 +57,7 @@ namespace LibraryCore.DataAccess.SqlServer
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
                 conn.Open();
-                string query = "select r.*,c.name as CustomerName from Reservations as r inner join Customers as c on r.CustomerId=c.Id";
+                string query = "select r.*, c.name as CustomerName,c.surname as CustomerSurname,room.RoomNumber from Reservations as r inner join Customers as c on r.CustomerId = c.Id inner join Rooms as room on r.RoomId = room.Id";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", id);
@@ -97,7 +97,7 @@ namespace LibraryCore.DataAccess.SqlServer
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
                 conn.Open();
-                string query = "select r.*,c.name as CustomerName from Reservations as r inner join Customers as c on r.CustomerId=c.Id";
+                string query = "select r.*, c.name as CustomerName,c.surname as CustomerSurname,room.RoomNumber from Reservations as r inner join Customers as c on r.CustomerId = c.Id inner join Rooms as room on r.RoomId = room.Id";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     var reader = cmd.ExecuteReader();
