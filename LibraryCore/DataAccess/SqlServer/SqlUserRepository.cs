@@ -92,7 +92,7 @@ namespace LibraryCore.DataAccess.SqlServer
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
                 conn.Open();
-                string query = "select * from Users where ";
+                string query = "select * from Users";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     var reader = cmd.ExecuteReader();
@@ -148,7 +148,7 @@ namespace LibraryCore.DataAccess.SqlServer
                         user = new User();
                         user.Id = reader.GetInt32("Id");
                         user.Username = reader.GetString("Username");
-                        user.PasswordHash = reader.GetString("PasswordHash");
+                        user.PasswordHash = reader.GetString("Password");
                        
                         
                     }

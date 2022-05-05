@@ -29,6 +29,7 @@ namespace LibraryCore.DataAccess.SqlServer
                     cmd.Parameters.AddWithValue("@Status", obj.Status);
                     cmd.Parameters.AddWithValue("@PricePerNight", obj.PricePerNight);
                     cmd.Parameters.AddWithValue("@PetFriendly", obj.PetFriendly);
+                    cmd.Parameters.AddWithValue("@IsSmoking", obj.IsSmoking);
 
                     return (int)cmd.ExecuteScalar();
                 }

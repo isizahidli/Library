@@ -89,14 +89,13 @@
                         <Button Style="{StaticResource btnMenuBig}" Name="btnCatalogs"  Height="55" Content="Məlumatlar" FontSize="20" FontWeight="Bold" Click="btnMenuItemClick"/>
                         <Grid Name="grdCatalogs" Height="0" >
                             <StackPanel>
-                                <Button Style="{StaticResource btnMenu}" Name="btnBooks"  Content="Kitablar"/>
-                                <Button Command="{Binding OpenDepartments}" Style="{StaticResource btnMenu}" Name="btnBranches"  Content="Filiallar"/>
+                                <Button Command="{Binding OpenDepartments}" Style="{StaticResource btnMenu}" Name="btnBranches"  Content="Departments"/>
                                 <Button Command="{Binding OpenRoomTypes}" Style="{StaticResource btnMenu}" Name="btnRoomTypes"  Content="Room types"/>
                                 <Button Command="{Binding OpenServices}" Style="{StaticResource btnMenu}" Name="btnServices"  Content="Services"/>
-                                <Button Command="{Binding OpenCustomers}" Style="{StaticResource btnMenu}" Name="btnCustomers"  Content="Services"/>
-                                <Button Command="{Binding OpenRooms}" Style="{StaticResource btnMenu}" Name="btnRooms"  Content="Services"/>
-                                <Button Command="{Binding OpenReservations}" Style="{StaticResource btnMenu}" Name="btnReservations"  Content="Services"/>
-                                <Button Command="{Binding OpenEmployees}" Style="{StaticResource btnMenu}" Name="btnEmployees"  Content="Services"/>
+                                <Button Command="{Binding OpenCustomers}" Style="{StaticResource btnMenu}" Name="btnCustomers"  Content="Customers"/>
+                                <Button Command="{Binding OpenRooms}" Style="{StaticResource btnMenu}" Name="btnRooms"  Content="Rooms"/>
+                                <Button Command="{Binding OpenReservations}" Style="{StaticResource btnMenu}" Name="btnReservations"  Content="Reservations"/>
+                                <Button Command="{Binding OpenEmployees}" Style="{StaticResource btnMenu}" Name="btnEmployees"  Content="Employees"/>
                             </StackPanel>
                         </Grid>
 

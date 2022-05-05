@@ -85,14 +85,14 @@ namespace LibraryCore.DataAccess.SqlServer
 
             customer.Id = Convert.ToInt32(reader["Id"]);
             customer.Name = reader["Name"].ToString();
-            customer.Surname = reader["Name"].ToString();
-            customer.Address = reader["Name"].ToString();
-            customer.PhoneNumber = reader["Name"].ToString();
-            customer.Email = reader["Name"].ToString();
-            customer.Country = reader["Name"].ToString();
-            customer.City = reader["Name"].ToString();
-            customer.ZipCode = reader["Name"].ToString();
-            customer.PassportNo = reader["Name"].ToString();
+            customer.Surname = reader["Surname"].ToString();
+            customer.Address = reader["Address"].ToString();
+            customer.PhoneNumber = reader["PhoneNumber"].ToString();
+            customer.Email = reader["Email"].ToString();
+            customer.Country = reader["Country"].ToString();
+            customer.City = reader["City"].ToString();
+            customer.ZipCode = reader["ZipCode"].ToString();
+            customer.PassportNo = reader["PassportNo"].ToString();
             customer.Gender = Convert.ToBoolean(reader["Gender"]);
 
             return customer;
@@ -103,7 +103,7 @@ namespace LibraryCore.DataAccess.SqlServer
             using (SqlConnection conn = new SqlConnection(context.ConnString))
             {
                 conn.Open();
-                string query = "select * from Customers where";
+                string query = "select * from Customers";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     var reader = cmd.ExecuteReader();
