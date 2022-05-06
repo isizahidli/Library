@@ -45,14 +45,14 @@
 
                         <StackPanel Grid.Column="1">
                             <ComboBox Text="{Binding CurrentReservation.Customer.Id}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
-                            <ComboBox Text="{Binding CurrentReservation.Room.Id}" Height="60" FontSize="15" Margin="5 0 0 0"  />
-                            <DatePicker Text="{Binding CurrentReservation.ReservsationDate}" Height="60" FontSize="15" Margin="5 0 0 0"  />
+                            <ComboBox Text="{Binding CurrentReservation.Room.Id}" Height="60bunu da silinmedi0)25" FontSize="15" Margin="5 0 0 0"  />
+                            <DatePicker Text="{Binding CurrentReservation.ReservsationDate}" Height="25" FontSize="15" Margin="5 0 0 0"  />
                             <DatePicker Text="{Binding CurrentReservation.CheckInDate}" Height="60" FontSize="15" Margin="5 0 0 0"  />
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Grid.Row="1">
                             <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >CheckOut Date</TextBlock>
-                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Adults</TextBlock>
+                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignmment="Left" >Adults</TextBlock>
                             <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Children</TextBlock>
                             <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Amount</TextBlock>
                             <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Status</TextBlock>

@@ -56,7 +56,7 @@
                             </StackPanel>
 
                             <StackPanel Grid.Column="3">
-                                <TextBox Text="{Binding CurrentRoomType.Status}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                                <ComboBox Text="{Binding CurrentRoomType.Status}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                                 <TextBox Text="{Binding CurrentRoomType.PricePerNight}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                                 <CheckBox IsChecked="{Binding CurrentRoomType.PetFriendly}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                                 <CheckBox IsChecked="{Binding CurrentRoomType.IsSmoking}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
@@ -82,8 +82,8 @@
                             <GridViewColumn  DisplayMemberBinding="{Binding FloorNo}" Header="Floor No" Width="100"/>
                             <GridViewColumn  DisplayMemberBinding="{Binding RoomType}" Header="Room Type" Width="100"/>
                             <GridViewColumn  DisplayMemberBinding="{Binding PetFriendly}" Header="Pet Friendly" Width="500"/>
-                            <GridViewColumn  DisplayMemberBinding="{Binding IsSmoking}" Header="Is Smoking" Width="500"/>
-                            <GridViewColumn  DisplayMemberBinding="{Binding PricePerNight}" Header="Price per night" Width="500"/>
+                            <GridViewColumn  DisplayMemberBinding="{Binding IsSmoking}" Header="Is Smoking" Width="100"/>
+                            <GridViewColumn  DisplayMemberBinding="{Binding PricePerNight}" Header="Price per night" Width="100"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
