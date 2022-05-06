@@ -62,7 +62,7 @@
                         </StackPanel>
 
                         <StackPanel Grid.Column="3">
-                            <ComboBox Text="{Binding CurrentEmployee.Department.Name}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                            <ComboBox ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding CurrentEmployee.Department.Id}" SelectedValuePath="Id" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                             <DatePicker Text="{Binding CurrentEmployee.JoiningDate}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                             <TextBox Text="{Binding CurrentEmployee.Salary}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                             <DatePicker Text="{Binding CurrentEmployee.BeginWorkTime}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>

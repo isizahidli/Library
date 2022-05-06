@@ -25,6 +25,8 @@ namespace Library.ViewModels.UserControls
             Enumerate.Execute(null);
         }
 
+        public List<RoomTypeModel> RoomTypes { get; set; }
+
         private RoomModel currentRoom;
         public RoomModel CurrentRoom
         {

@@ -52,7 +52,10 @@
                         </StackPanel>
 
                         <StackPanel Grid.Column="3">
-                            <ComboBox Text="{Binding CurrentService.Status}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                            <ComboBox SelectedValue="{Binding CurrentService.Status}" SelectedValuePath="Tag" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5">
+                                <ComboBoxItem Content="Active" Tag="1"/>
+                                <ComboBoxItem Content="DeActive" Tag="0"/>
+                            </ComboBox>
                             <TextBox Text="{Binding CurrentService.Price}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                         </StackPanel>
 

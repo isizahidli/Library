@@ -8,7 +8,7 @@ namespace LibraryCore.Enums
 {
     public enum Status
     {
-        St1,
-        St2
+        Active,
+        DeActive
     }
 }
