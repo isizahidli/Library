@@ -4,6 +4,7 @@ using Library.ViewModels;
 using Library.ViewModels.UserControls;
 using Library.Views.UserControls;
 using LibraryCore.Domain.Entities;
+using LibraryCore.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,24 @@ namespace Library.Commands.MainPageCommands
                 models.Add(model);
             }
 
+            List<Customer> customers = DB.CustomerRepository.Get();
+            List<CustomerModel> cusModels = new List<CustomerModel>();
+            foreach (var customer in customers)
+            {
+                var model = CustomerMapper.Map(customer);
+                cusModels.Add(model);
+            }
+
+            List<Room> rooms = DB.RoomRepository.Get().Where(x => x.Status == Status.Active).ToList();
+            List<RoomModel> roomModels = new List<RoomModel>();
+            foreach (var room in rooms)
+            {
+                var model = RoomMapper.Map(room);
+                roomModels.Add(model);
+            }
+
+            reservationViewModel.Rooms = roomModels;
+            reservationViewModel.Customers = cusModels;
             reservationViewModel.AllReservations = new List<ReservationModel>(models);
             reservationViewModel.InitializeViewModel();
             reservationControl.DataContext = reservationViewModel;

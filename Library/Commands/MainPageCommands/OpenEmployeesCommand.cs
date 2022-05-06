@@ -4,6 +4,7 @@ using Library.ViewModels;
 using Library.ViewModels.UserControls;
 using Library.Views.UserControls;
 using LibraryCore.Domain.Entities;
+using LibraryCore.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,15 @@ namespace Library.Commands.MainPageCommands
                 models.Add(model);
             }
 
+            List<Department> departments= DB.DepartmentRepository.Get().Where(x => x.Status == Status.Active).ToList();
+            List<DepartmentModel> depModels = new List<DepartmentModel>();
+            foreach (var department in departments)
+            {
+                var model = DepartmentMapper.Map(department);
+                depModels.Add(model);
+            }
+
+            employeeViewModel.Departments = depModels;
             employeeViewModel.AllEmployees = new List<EmployeeModel>(models);
             employeeViewModel.InitializeViewModel();
             employeeControl.DataContext = employeeViewModel;

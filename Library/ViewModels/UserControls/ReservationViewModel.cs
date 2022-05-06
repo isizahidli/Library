@@ -27,6 +27,9 @@ namespace Library.ViewModels.UserControls
             Enumerate.Execute(null);
         }
 
+        public List<RoomModel> Rooms { get; set; }
+        public List<CustomerModel> Customers { get; set; }
+
         private ReservationModel currentReservation;
         public ReservationModel CurrentReservation
         {

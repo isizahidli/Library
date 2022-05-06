@@ -30,6 +30,14 @@ namespace Library.Commands.MainPageCommands
                 models.Add(model);
             }
 
+            List<RoomType> roomTypes = DB.RoomTypeRepository.Get();
+            List<RoomTypeModel> roomTypeModels = new List<RoomTypeModel>();
+            foreach (var roomType in roomTypes)
+            {
+                roomTypeModels.Add(RoomTypeMapper.Map(roomType));
+            }
+
+            roomViewModel.RoomTypes = roomTypeModels ?? new List<RoomTypeModel>();
             roomViewModel.AllRooms = new List<RoomModel>(models);
             roomViewModel.InitializeViewModel();
             roomControl.DataContext = roomViewModel;

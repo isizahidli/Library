@@ -44,10 +44,10 @@
                         </StackPanel>
 
                         <StackPanel Grid.Column="1">
-                            <ComboBox Text="{Binding CurrentReservation.Customer.Id}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
-                            <ComboBox Text="{Binding CurrentReservation.Room.Id}" Height="60bunu da silinmedi0)25" FontSize="15" Margin="5 0 0 0"  />
-                            <DatePicker Text="{Binding CurrentReservation.ReservsationDate}" Height="25" FontSize="15" Margin="5 0 0 0"  />
-                            <DatePicker Text="{Binding CurrentReservation.CheckInDate}" Height="60" FontSize="15" Margin="5 0 0 0"  />
+                            <ComboBox ItemsSource="{Binding Customers}" DisplayMemberPath="Name" SelectedValue="{Binding CurrentReservation.Customer.Id}" SelectedValuePath="Id" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
+                            <ComboBox ItemsSource="{Binding Rooms}" DisplayMemberPath="RoomNumber" SelectedValue="{Binding CurrentReservation.Room.Id}" SelectedValuePath="Id" Height="25" FontSize="15" Margin="5"/>
+                            <DatePicker Text="{Binding CurrentReservation.ReservsationDate}" Height="25" FontSize="15" Margin="5"  />
+                            <DatePicker Text="{Binding CurrentReservation.CheckInDate}" Height="25" FontSize="15" Margin="5"  />
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Grid.Row="1">
@@ -63,7 +63,10 @@
                             <TextBox Text="{Binding CurrentReservation.Adults}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                             <TextBox Text="{Binding CurrentReservation.Children}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                             <TextBox Text="{Binding CurrentReservation.Amount}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
-                            <ComboBox Text="{Binding CurrentReservation.Status}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                            <ComboBox SelectedValue="{Binding CurrentReservation.Status}" SelectedValuePath="Tag" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5">
+                                <ComboBoxItem Content="Active" Tag="1"/>
+                                <ComboBoxItem Content="DeActive" Tag="0"/>
+                            </ComboBox>
                         </StackPanel>
                     </Grid>
 
