@@ -27,7 +27,7 @@ namespace Library.Models
 
         public string Name { get; set; }
         public string Description { get; set; }
-        public bool Gender { get; set; }
+        public Gender Gender { get; set; }
 
         public bool Contains(string searchText)
         {
@@ -36,5 +36,10 @@ namespace Library.Models
             return (Name != null && Name.ToLower().Contains(lowerText)) ||
                     (Description != null && Description.ToLower().Contains(lowerText));
         }
+    }
+    public enum Gender 
+    {
+        Male = 1,
+        Female = 0
     }
 }

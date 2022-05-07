@@ -30,7 +30,16 @@ namespace Library.Commands.MainPageCommands
                 models.Add(model);
             }
 
+            List<Department> departments = DB.DepartmentRepository.Get();
+            List<DepartmentModel> depModels = new List<DepartmentModel>();
+            foreach (var dep in departments)
+            {
+                var model = DepartmentMapper.Map(dep);
+                depModels.Add(model);
+            }
+
             serviceViewModel.AllServices = new List<ServiceModel>(models);
+            serviceViewModel.Departments = depModels;
             serviceViewModel.InitializeViewModel();
             serviceControl.DataContext = serviceViewModel;
 

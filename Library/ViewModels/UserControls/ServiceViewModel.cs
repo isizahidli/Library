@@ -25,6 +25,8 @@ namespace Library.ViewModels.UserControls
             Enumerate.Execute(null);
         }
 
+        public List<DepartmentModel> Departments { get; set; }
+
         private ServiceModel currentService;
         public ServiceModel CurrentService
         {

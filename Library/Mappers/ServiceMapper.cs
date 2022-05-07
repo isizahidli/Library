@@ -19,6 +19,8 @@ namespace Library.Mappers
             model.Description = service.Description;
             model.Status = service.Status;
             model.Price = service.Price;
+            model.Department.Id = service.Department.Id;
+            model.Department.Name = service.Department.Name;
 
             return model;
         }
@@ -32,6 +34,8 @@ namespace Library.Mappers
             destination.Description = model.Description;
             destination.Status = model.Status;
             destination.Price = model.Price;
+            destination.Department.Id = model.Department.Id;
+            destination.Department.Name = model.Department.Name;
 
             return destination;
         }

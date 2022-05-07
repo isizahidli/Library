@@ -21,7 +21,7 @@ namespace LibraryCore.DataAccess.SqlServer
             {
                 conn.Open();
                 string query = @"Insert into Rooms output inserted.Id 
-                        values(@RoomNumber, @FloorNo, @PricePerNight, @PetFriendly,@IsSmoking,@Status)";
+                        values(@RoomNumber, @FloorNo, @PricePerNight, @PetFriendly,@IsSmoking,@Status, @RoomTypeId)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@RoomNumber", obj.RoomNumber);
@@ -30,6 +30,7 @@ namespace LibraryCore.DataAccess.SqlServer
                     cmd.Parameters.AddWithValue("@PricePerNight", obj.PricePerNight);
                     cmd.Parameters.AddWithValue("@PetFriendly", obj.PetFriendly);
                     cmd.Parameters.AddWithValue("@IsSmoking", obj.IsSmoking);
+                    cmd.Parameters.AddWithValue("@RoomTypeId", obj.RoomType.Id);
 
                     return (int)cmd.ExecuteScalar();
                 }
@@ -85,8 +86,8 @@ namespace LibraryCore.DataAccess.SqlServer
             room.PricePerNight = Convert.ToDecimal(reader["PricePerNight"]);
             room.PetFriendly = Convert.ToBoolean(reader["Petfriendly"]);
             room.IsSmoking = Convert.ToBoolean(reader["IsSmoking"]);
-
-
+            room.RoomType.Id = Convert.ToInt32(reader["RoomTypeId"]);
+            room.RoomType.Name = reader["RoomTypeName"].ToString();
 
             return room;
         }

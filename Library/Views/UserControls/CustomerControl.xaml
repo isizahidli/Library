@@ -64,7 +64,10 @@
                             <TextBox Text="{Binding CurrentCustomer.City}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                             <TextBox Text="{Binding CurrentCustomer.ZipCode}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                             <TextBox Text="{Binding CurrentCustomer.PassportNo}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
-                            <CheckBox IsChecked="{Binding CurrentCustomer.Gender}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                            <ComboBox SelectedIndex="0" SelectedValue="{Binding CurrentCustomer.Gender}" SelectedValuePath="Tag" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5">
+                                <ComboBoxItem Content="Male" Tag="1"/>
+                                <ComboBoxItem Content="Female" Tag="0"/>
+                            </ComboBox>
                         </StackPanel>
 
                     </Grid>

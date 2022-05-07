@@ -45,7 +45,7 @@
                             <StackPanel Grid.Column="1">
                                 <TextBox Text="{Binding CurrentRoom.RoomNumber}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
                                 <TextBox Text="{Binding CurrentRoom.FloorNo}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
-                                <ComboBox ItemsSource="{Binding RoomTypes}" SelectedValuePath="Id" SelectedValue="{Binding CurrentRoom.RoomType.Id}" DisplayMemberPath="{Binding Name}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
+                                <ComboBox ItemsSource="{Binding RoomTypes}" SelectedValuePath="Id" SelectedValue="{Binding CurrentRoom.RoomType.Id}" DisplayMemberPath="Name" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
                             </StackPanel>
 
                             <StackPanel Grid.Column="2" Grid.Row="1">
@@ -83,10 +83,11 @@
                             <GridViewColumn  DisplayMemberBinding="{Binding No}"  Header="No" Width="25"/>
                             <GridViewColumn  DisplayMemberBinding="{Binding RoomNumber}" Header="Room Number" Width="100"/>
                             <GridViewColumn  DisplayMemberBinding="{Binding FloorNo}" Header="Floor No" Width="100"/>
-                            <GridViewColumn  DisplayMemberBinding="{Binding RoomType}" Header="Room Type" Width="100"/>
-                            <GridViewColumn  DisplayMemberBinding="{Binding PetFriendly}" Header="Pet Friendly" Width="500"/>
+                            <GridViewColumn  DisplayMemberBinding="{Binding RoomType.Name}" Header="Room Type" Width="100"/>
+                            <GridViewColumn  DisplayMemberBinding="{Binding PetFriendly}" Header="Pet Friendly" Width="100"/>
                             <GridViewColumn  DisplayMemberBinding="{Binding IsSmoking}" Header="Is Smoking" Width="100"/>
                             <GridViewColumn  DisplayMemberBinding="{Binding PricePerNight}" Header="Price per night" Width="100"/>
+                            <GridViewColumn  DisplayMemberBinding="{Binding Status}" Header="Status" Width="100"/>
                         </GridView>
                     </ListView.View>
                 </ListView>

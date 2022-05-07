@@ -21,12 +21,13 @@ namespace LibraryCore.DataAccess.SqlServer
             {
                 conn.Open();
                 string query = @"Insert into Services output inserted.Id 
-                        values(@Name, @Description, @Status, @Price,)";
+                        values(@Name, @Description, @Price, @Status, @DepartmentId)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Name", obj.Name);
                     cmd.Parameters.AddWithValue("@Price", obj.Price);
                     cmd.Parameters.AddWithValue("@Status", obj.Status);
+                    cmd.Parameters.AddWithValue("@DepartmentId", obj.Department.Id);
                     cmd.Parameters.AddWithValue("@Description", obj.Description ?? (object)DBNull.Value);
                    
                     return (int)cmd.ExecuteScalar();
@@ -80,6 +81,8 @@ namespace LibraryCore.DataAccess.SqlServer
           //  service.Status = 
             service.Name = reader["Name"].ToString();
             service.Price = Convert.ToDecimal(reader["Price"]);
+            service.Department.Id = Convert.ToInt32(reader["DepartmentId"]);
+            service.Department.Name = reader["DepName"].ToString();
 
             if (!reader.IsDBNull(reader.GetOrdinal("Description")))
                 service.Description = reader["Description"].ToString();

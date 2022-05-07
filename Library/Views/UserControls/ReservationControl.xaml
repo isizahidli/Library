@@ -44,15 +44,15 @@
                         </StackPanel>
 
                         <StackPanel Grid.Column="1">
-                            <ComboBox ItemsSource="{Binding Customers}" DisplayMemberPath="Name" SelectedValue="{Binding CurrentReservation.Customer.Id}" SelectedValuePath="Id" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
-                            <ComboBox ItemsSource="{Binding Rooms}" DisplayMemberPath="RoomNumber" SelectedValue="{Binding CurrentReservation.Room.Id}" SelectedValuePath="Id" Height="25" FontSize="15" Margin="5"/>
+                            <ComboBox SelectedIndex="0" ItemsSource="{Binding Customers}" DisplayMemberPath="Name" SelectedValue="{Binding CurrentReservation.Customer.Id}" SelectedValuePath="Id" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5" />
+                            <ComboBox SelectedIndex="0" ItemsSource="{Binding Rooms}" DisplayMemberPath="RoomNumber" SelectedValue="{Binding CurrentReservation.Room.Id}" SelectedValuePath="Id" Height="25" FontSize="15" Margin="5"/>
                             <DatePicker Text="{Binding CurrentReservation.ReservsationDate}" Height="25" FontSize="15" Margin="5"  />
                             <DatePicker Text="{Binding CurrentReservation.CheckInDate}" Height="25" FontSize="15" Margin="5"  />
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Grid.Row="1">
                             <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >CheckOut Date</TextBlock>
-                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignmment="Left" >Adults</TextBlock>
+                            <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Adults</TextBlock>
                             <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Children</TextBlock>
                             <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Amount</TextBlock>
                             <TextBlock Height="25" Margin="5 5" FontSize="15" HorizontalAlignment="Left" >Status</TextBlock>
@@ -63,7 +63,7 @@
                             <TextBox Text="{Binding CurrentReservation.Adults}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                             <TextBox Text="{Binding CurrentReservation.Children}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
                             <TextBox Text="{Binding CurrentReservation.Amount}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
-                            <ComboBox SelectedValue="{Binding CurrentReservation.Status}" SelectedValuePath="Tag" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5">
+                            <ComboBox SelectedIndex="0" SelectedValue="{Binding CurrentReservation.Status}" SelectedValuePath="Tag" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5">
                                 <ComboBoxItem Content="Active" Tag="1"/>
                                 <ComboBoxItem Content="DeActive" Tag="0"/>
                             </ComboBox>

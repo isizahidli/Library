@@ -49,8 +49,11 @@
                             <TextBox Text="{Binding CurrentEmployee.Surname}" Height="25" FontSize="15" Margin="5"  />
                             <TextBox Text="{Binding CurrentEmployee.PhoneNumber}" Height="25" FontSize="15" Margin="5"  />
                             <TextBox Text="{Binding CurrentEmployee.Address}" Height="25" FontSize="15" Margin="5"  />
-                            <TextBox Text="{Binding CurrentEmployee.BirthDate}" Height="25" FontSize="15" Margin="5"  />
-                            <CheckBox IsChecked="{Binding CurrentEmployee.Gender}" FontSize="15" Margin="5"  />
+                            <DatePicker SelectedDate="{Binding CurrentEmployee.BirthDate}" Height="25" FontSize="15" Margin="5"  />
+                            <ComboBox SelectedIndex="0" SelectedValue="{Binding CurrentEmployee.Gender}" SelectedValuePath="Tag" FontSize="15" Height="25" Width="50" HorizontalAlignment="Left" Margin="5">
+                                <ComboBoxItem Content="Male" Tag="1"/>
+                                <ComboBoxItem Content="Female" Tag="0"/>
+                            </ComboBox>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Grid.Row="1">
@@ -63,10 +66,10 @@
 
                         <StackPanel Grid.Column="3">
                             <ComboBox ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding CurrentEmployee.Department.Id}" SelectedValuePath="Id" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
-                            <DatePicker Text="{Binding CurrentEmployee.JoiningDate}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
-                            <TextBox Text="{Binding CurrentEmployee.Salary}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
-                            <DatePicker Text="{Binding CurrentEmployee.BeginWorkTime}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
-                            <DatePicker Text="{Binding CurrentEmployee.EndWorkTime}" FontSize="15" Height="25" Width="250" HorizontalAlignment="Left" Margin="5"/>
+                            <DatePicker SelectedDate="{Binding CurrentEmployee.JoiningDate}" FontSize="15" Height="25" Width="190" HorizontalAlignment="Left" Margin="5"/>
+                            <TextBox Text="{Binding CurrentEmployee.Salary}" FontSize="15" Height="25" Width="190" HorizontalAlignment="Left" Margin="5"/>
+                            <DatePicker SelectedDate="{Binding CurrentEmployee.BeginWorkTime}" FontSize="15" Height="25" Width="190" HorizontalAlignment="Left" Margin="5"/>
+                            <DatePicker SelectedDate="{Binding CurrentEmployee.EndWorkTime}" FontSize="15" Height="25" Width="190" HorizontalAlignment="Left" Margin="5"/>
                         </StackPanel>
 
                     </Grid>
